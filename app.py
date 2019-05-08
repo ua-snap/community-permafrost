@@ -2,6 +2,7 @@ import os
 import json
 import numpy as np
 import dash
+import flask
 from dash.dependencies import Input, Output, State
 import plotly.graph_objs as go
 import dash_core_components as dcc
@@ -10,6 +11,7 @@ import dash_html_components as html
 import pandas as pd
 import geopandas as gpd
 
+server = flask.Flask(__name__)
 mapbox_access_token = os.environ['MAPBOX_ACCESS_TOKEN']
 communities = pd.read_csv('Data.csv')
 names = communities['Community']
