@@ -15,7 +15,8 @@ server = flask.Flask(__name__)
 mapbox_access_token = os.environ['MAPBOX_ACCESS_TOKEN']
 communities = pd.read_csv('Data.csv')
 names = communities['Community']
-app = dash.Dash(__name__)
+server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
+app = dash.Dash(__name__, server=server)
 
 def calc_rolling_mean(array, ndays, location):
     annual_rolling_pcpt = []
@@ -258,4 +259,5 @@ def make_plot(community):
     return figure
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.server.run(debug=True, threaded=True)
+    #app.run_server(debug=True)
