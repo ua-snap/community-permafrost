@@ -16,6 +16,7 @@ server = flask.Flask(__name__)
 mapbox_access_token = os.environ['MAPBOX_ACCESS_TOKEN']
 communities = pd.read_csv('Data.csv')
 names = communities['Community']
+path_prefix='./'
 server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
 app = dash.Dash(__name__, server=server)
 
@@ -68,6 +69,7 @@ map_communities_trace = go.Scattermapbox(
 )
 
 map_layout = go.Layout(
+    height=400,
     autosize=True,
     hovermode='closest',
     mapbox=dict(
@@ -94,56 +96,142 @@ config = {
         'scale': 1
     }
 }
-
-app.layout = html.Div(
-    className='container',
+header_section = html.Div(
+    className='header',
     children=[
-        html.H1(
-            'Permafrost',
-            className='title is-2'
-        ),
         html.Div(
-            'Sample app to explore permafrost',
-            className='subtitle is-4'
-        ),
-        html.Div(
-            className='columns',
+            className='container',
             children=[
                 html.Div(
-                    className='column',
+                    className='section',
                     children=[
-                        community
-                    ]
-                ),
-            ]
-        ),
-        html.Div(
-            className='columns',
-            children=[
-                html.Div(
-                    className='column is-one-third',
-                    children=[
-                        dcc.Graph(
-                            id='map',
-                            figure=map_figure,
-                            config={
-                                'displayModeBar': False,
-                                'scrollZoom': False
-                            }
-                        )
-                    ]
-                ),
-                html.Div(
-                    className='column',
-                    children=[
-                        dcc.Graph(
-                            id='weather-plot',
-                            config=config
+                        html.Div(
+                            className='columns',
+                            children=[
+                                html.Div(
+                                    className='header--logo',
+                                    children=[
+                                        html.A(
+                                            className='header--snap-link',
+                                            href='https://snap.uaf.edu',
+                                            rel='external',
+                                            target='_blank',
+                                            children=[
+                                                html.Img(src=path_prefix + 'assets/SNAP_acronym_color_square.svg')
+                                            ]
+                                        )
+                                    ]
+                                ),
+                                html.Div(
+                                    className='header--titles',
+                                    children=[
+                                        html.H1(
+                                            'Community Permafrost Data',
+                                            className='title is-2'
+                                        ),
+                                        html.H2(
+                                            'Explore community risk to permafrost.',
+                                            className='subtitle is-4'
+                                        )
+                                    ]
+                                ),
+                            ]
                         )
                     ]
                 )
             ]
         )
+    ]
+)
+
+footer = html.Footer(
+    className='footer has-text-centered',
+    children=[
+        html.Div(
+            children=[
+                html.A(
+                    href='https://snap.uaf.edu',
+                    target='_blank',
+                    className='level-item',
+                    children=[
+                        html.Img(
+                            src=path_prefix + 'assets/SNAP.svg'
+                        )
+                    ]
+                ),
+                html.A(
+                    href='https://uaf.edu/uaf/',
+                    target='_blank',
+                    className='level-item',
+                    children=[
+                        html.Img(
+                            src=path_prefix + 'assets/UAF.svg'
+                        )
+                    ]
+                ),
+            ]
+        ),
+        dcc.Markdown(
+            """
+UA is an AA/EO employer and educational institution and prohibits illegal discrimination against any individual. [Statement of Nondiscrimination](https://www.alaska.edu/nondiscrimination/)
+            """,
+            className='content is-size-6'
+        )
+    ]
+)
+
+app.layout = html.Div(
+    children=[
+        header_section,
+        html.Div(
+            className='section',
+            children=[
+                html.Div(
+                    className='container',
+                    children=[
+                        html.Div(
+                            className='columns',
+                            children=[
+                                html.Div(
+                                    className='column',
+                                    children=[
+                                        dcc.Graph(
+                                            id='weather-plot',
+                                            config=config
+                                        )
+                                    ]
+                                )
+                            ]
+                        ),
+                        html.Div(
+                            className='columns',
+                            children=[
+                                html.Div(
+                                    className='column',
+                                    children=[
+                                        community
+                                    ]
+                                ),
+                            ]
+                        ),
+                        html.Div(
+                            className='column is-one-third',
+                            children=[
+                                dcc.Graph(
+                                    id='map',
+                                    figure=map_figure,
+                                    config={
+                                        'displayModeBar': False,
+                                        'scrollZoom': False
+                                    }
+                                )
+                            ]
+                        )
+                    ]
+                )
+            ]
+        ),
+        footer
     ]
 )
 
@@ -172,7 +260,7 @@ def make_plot(community):
     figure = {}
     figure['data'] = []
 
-    hazard_lu = ['Permafrost Occurrence','Permafrost Temperature','Thaw Susceptibility','Massive Ice','Existing Problems' ]
+    hazard_lu = ['Massive Ice', 'Thaw Susceptibility', 'Existing Problems', 'Permafrost Occurrence','Permafrost Temperature' ]
     mult = 200.0
     marker_colors = ['#053F5A','#2AACB5','#DDE495','#EEB26B','#E1695B']
 
@@ -185,8 +273,7 @@ def make_plot(community):
         else:
             df = communities[communities['Community'] == i].iloc[0]
             
-        marker_texts = [df[8], df[9], df[10], df[11], df[12]]
-        #marker_sizes = [df[8], df[9], df[10], df[11], df[12]]
+        marker_texts = [df[11], df[10], df[12], df[8], df[9]]
         marker_sizes = [x * 0.8 + 0.25 for x in marker_texts]
 
 
@@ -235,12 +322,7 @@ def make_plot(community):
         'barmode': 'grouped',
         'hovermode': 'closest',
         'title': {
-            'text': 'Community Permafrost Risk',
-        },
-        'margin': {
-            'l': 100,
-            'r': 100,
-            'pad': 4
+            'text': 'Community Permafrost Data',
         },
 	'height': 500,
 	'yaxis': {
