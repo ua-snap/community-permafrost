@@ -1,0 +1,188 @@
+Community,CommDiff,Latitude,Longitude,Minimum_Vulnerability,Maximum_Vulnerability,Vulnerablility_Class,Confidence,PF_occurrence,PF_temperature ,Thaw_susceptibility ,Massive_ice,Existing_problems 
+Akhiok,Akhiok,56.946,-154.17,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Akiachak,Akiachak,60.909,-161.431,Somewhat Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,**,1,3,2,2,2
+Akiak,Akiak,60.912,-161.214,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Akutan,Akutan,54.139,-165.778,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Alakanuk,Alakanuk,62.689,-164.615,Slightly Vulnerable,Vulnerable,Somewhat_Vulnerable,**,1,3,2,1,2
+Alatna,Alatna,66.597,-152.76,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,3,3,3,3,2
+Aleknagik,Aleknagik,59.273,-158.618,Low Vulnerability,Low Vulnerability,Low_Vulnerability,**,0,0,0,0,0
+Allakaket,Allakaket,66.566,-152.646,Slightly Vulnerable,Highly Vulnerable,Vulnerable,*,2,3,2,2,2
+Ambler,Ambler,67.086,-157.851,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,2,3,1,1,1
+Anaktuvuk Pass,Anaktuvuk Pass,68.143,-151.736,Slightly Vulnerable,Highly Vulnerable,Vulnerable,*,3,1,2,2,2
+Angoon,Angoon,57.503,-134.584,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Aniak,Aniak,61.578,-159.522,Slightly Vulnerable,Somewhat Vulnerable,Slightly_Vulnerable,**,1,3,1,1,1
+Anvik,Anvik,62.656,-160.207,Slightly Vulnerable,Somewhat Vulnerable,Slightly_Vulnerable,**,1,3,1,1,1
+Arctic Village,Arctic Village,68.127,-145.538,Slightly Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,3,2,2,2,2
+Atka,Atka,52.191,-174.189,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Atmautluak,Atmautluak,60.861,-162.476,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,2,3,2,2,2
+Atqasuk,Atqasuk,70.469,-157.396,Slightly Vulnerable,Highly Vulnerable,Highly_Vulnerable,*,3,1,2,3,3
+Utqiagvik (formerly Barrow),Barrow,71.291,-156.789,Highly Vulnerable,Highly Vulnerable,Highly_Vulnerable,***,3,1,3,3,3
+Beaver,Beaver,66.359,-147.396,Somewhat Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,2
+Bethel,Bethel,60.792,-161.756,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,2,3,2,2,2
+Bettles,Bettles,66.907,-151.683,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,3,3,2,1,2
+Birch Creek,Birch Creek,66.269,-145.824,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,2,3,1,1,1
+Brevig Mission,Brevig Mission,65.335,-166.489,Slightly Vulnerable,Highly Vulnerable,Vulnerable,*,3,3,3,2,2
+Buckland,Buckland,65.98,-161.123,Slightly Vulnerable,Highly Vulnerable,Highly_Vulnerable,*,3,2,3,3,3
+Cantwell,Cantwell,63.392,-148.951,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Chalkyitsik,Chalkyitsik,66.654,-143.722,Slightly Vulnerable,Somewhat Vulnerable,Slightly_Vulnerable,**,2,3,1,1,1
+Chefornak,Chefornak,60.161,-164.271,Slightly Vulnerable,Highly Vulnerable,Vulnerable,*,3,3,3,1,3
+Chenega,Chenega Bay,60.075,-148.003,Low Vulnerability,Low Vulnerability,Low_Vulnerability,**,0,0,0,0,0
+Chevak,Chevak,61.528,-165.586,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,3,3,3,3,3
+Chickaloon,Chickaloon,61.797,-148.463,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Chignik,Chignik,56.295,-158.402,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Chignik Lagoon,Chignik Lagoon,56.354,-158.522,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Chignik Lake,Chignik Lake,56.264,-158.747,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Chistochina,Chistochina,62.565,-144.665,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Chitina,Chitina,61.516,-144.437,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,2
+Chuathbaluk,Chuathbaluk,61.573,-159.235,Low Vulnerability,Vulnerable,Slightly_Vulnerable,,,,,,
+Circle,Circle,65.826,-144.061,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,3,3,3,2,2
+Clark's Point,Clark's Point,58.844,-158.551,Low Vulnerability,Low Vulnerability,Low_Vulnerability,**,0,0,0,0,0
+Copper Center,Copper Center,61.955,-145.305,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Cordova,Cordova,60.543,-145.757,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Craig,Craig,55.476,-133.148,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Crooked Creek,Crooked Creek,61.87,-158.111,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,2
+Deering,Deering,66.076,-162.717,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,3,3,2,2,2
+Dillingham,Dillingham,59.04,-158.457,Slightly Vulnerable,Slightly Vulnerable,Slightly_Vulnerable,***,1,3,1,1,1
+Diomede,Diomede,65.765,-168.911,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,3,2,1,1,1
+Eagle,Eagle,64.788,-141.2,Slightly Vulnerable,Vulnerable,Somewhat_Vulnerable,**,2,2,2,2,2
+Eek,Eek,60.219,-162.024,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,2,3,3,2,3
+Egegik,Egegik,58.216,-157.376,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Eklutna,Eklutna,61.458,-149.362,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Ekwok,Ekwok,59.35,-157.475,Low Vulnerability,Low Vulnerability,Low_Vulnerability,**,0,0,0,0,0
+Elim,Elim,64.618,-162.26,Low Vulnerability,Vulnerable,Somewhat_Vulnerable,*,2,3,1,1,1
+Emmonak,Emmonak,62.778,-164.523,Slightly Vulnerable,Vulnerable,Somewhat_Vulnerable,**,1,3,2,1,2
+False Pass,False Pass,54.855,-163.407,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Fort Yukon,Fort Yukon,66.565,-145.274,Somewhat Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,**,2,3,2,1,2
+Gakona,Gakona,62.302,-145.302,Slightly Vulnerable,Slightly Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Galena,Galena,64.733,-156.927,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,2,3,2,2,1
+Gambell,Gambell,63.78,-171.741,Slightly Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,3,3,1,1,2
+Golovin,Golovin,64.543,-163.029,Somewhat Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,**,2,3,2,2,2
+Goodnews Bay,Goodnews Bay,59.119,-161.589,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Grayling,Grayling,62.906,-160.077,Slightly Vulnerable,Somewhat Vulnerable,Slightly_Vulnerable,**,1,3,1,1,1
+Gulkana,Gulkana,62.271,-145.382,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,2,3,2,1,2
+Holy Cross,Holy Cross,62.199,-159.771,Slightly Vulnerable,Highly Vulnerable,Vulnerable,*,1,3,2,1,2
+Hoonah,Hoonah,58.11,-135.444,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Hooper Bay,Hooper Bay,61.531,-166.097,Slightly Vulnerable,Vulnerable,Somewhat_Vulnerable,**,1,3,1,1,1
+Hughes,Hughes,66.049,-154.255,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,1,3,1,2,1
+Huslia,Huslia,65.699,-156.4,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,1,3,1,2,2
+Hydaburg,Hydaburg,55.208,-132.827,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Igiugig,Igiugig,59.328,-155.895,Low Vulnerability,Low Vulnerability,Low_Vulnerability,*,0,0,0,0,0
+Iliamna,Iliamna,59.754,-154.817,Low Vulnerability,Low Vulnerability,Low_Vulnerability,*,0,0,0,0,0
+Kake,Kake,56.976,-133.947,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Kaktovik,Kaktovik,70.132,-143.624,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,3,1,3,3,3
+Kaltag,Kaltag,64.327,-158.722,Somewhat Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,**,2,3,2,1,2
+Kasaan,Kasaan,55.539,-132.401,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Kasigluk,Kasigluk,60.896,-162.521,Slightly Vulnerable,Highly Vulnerable,Vulnerable,*,2,3,2,1,2
+Kiana,Kiana,66.975,-160.423,Slightly Vulnerable,Highly Vulnerable,Highly_Vulnerable,*,2,3,3,2,2
+King Cove,King Cove,55.063,-162.31,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Kipnuk,Kipnuk,59.939,-164.041,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,2,3,2,1,2
+Kivalina,Kivalina,67.727,-164.533,Slightly Vulnerable,Somewhat Vulnerable,Somewhat_Vulnerable,**,2,3,1,1,1
+Klawock,Klawock,55.552,-133.096,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Klukwan,Klukwan,59.399,-135.894,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Kobuk,Kobuk,66.907,-156.881,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,1,3,2,1,2
+Kokhanok,Kokhanok,59.443,-154.761,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Koliganek,Koliganek,59.729,-157.284,Low Vulnerability,Vulnerable,Somewhat_Vulnerable,*,1,3,1,1,1
+Kongiganak,Kongiganak,59.965,-162.877,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,3,3,3,2,3
+Kotlik,Kotlik,63.034,-163.553,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,1,3,2,1,1
+Kotzebue,Kotzebue,66.898,-162.597,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,2,3,2,2,2
+Koyuk,Koyuk,64.932,-161.157,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,3,3,2,2,2
+Koyukuk,Koyukuk,64.88,-157.701,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Kwethluk,Kwethluk,60.812,-161.436,Slightly Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,2,1
+Kwigillingok,Kwigillingok,59.864,-163.134,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,1,3,2,1,2
+Larsen Bay,Larsen Bay,57.54,-153.979,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Levelock,Levelock,59.115,-156.857,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Lime Village,Lime Village,61.356,-155.436,Slightly Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,2
+Lower Kalskag,Lower Kalskag,61.512,-160.358,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,2
+Manley Hot Springs,Manley Hot Springs,65.001,-150.634,Slightly Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,2,2
+Manokotak,Manokotak,58.98,-159.053,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Marshall,Marshall,61.878,-162.081,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,3,3,2,1,2
+McGrath,McGrath,62.956,-155.596,Slightly Vulnerable,Somewhat Vulnerable,Slightly_Vulnerable,**,1,3,1,1,1
+Mekoryuk,Mekoryuk,60.388,-166.185,Somewhat Vulnerable,Highly Vulnerable,Vulnerable,**,2,3,3,1,3
+Mentasta Lake,Mentasta Lake,62.921,-143.792,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Minto,Minto,65.156,-149.328,Low Vulnerability,Vulnerable,Somewhat_Vulnerable,*,1,3,1,1,1
+Mountain Village,Mountain Village,62.088,-163.72,Slightly Vulnerable,Highly Vulnerable,Vulnerable,*,2,3,2,2,2
+Naknek,Naknek,58.728,-157.014,Low Vulnerability,Vulnerable,Somewhat_Vulnerable,*,1,3,1,1,1
+Nanwalek,Nanwalek,59.354,-151.916,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Napakiak,Napakiak,60.697,-161.952,Low Vulnerability,Vulnerable,Somewhat_Vulnerable,*,1,3,1,1,1
+Napaskiak,Napaskiak,60.708,-161.766,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,1,3,1,1,1
+Nelson Lagoon,Nelson Lagoon,56.001,-161.201,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Nenana,Nenana,64.564,-149.093,Slightly Vulnerable,Somewhat Vulnerable,Slightly_Vulnerable,**,1,3,1,1,1
+New Stuyahok,New Stuyahok,59.453,-157.312,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,2,2
+Newhalen,Newhalen,59.72,-154.897,Low Vulnerability,Low Vulnerability,Low_Vulnerability,*,0,0,0,0,0
+Newtok,Newtok,60.943,-164.629,Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,2,3,3,1,3
+Nightmute,Nightmute,60.479,-164.724,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,2,3,3,2,2
+Nikolai,Nikolai,63.013,-154.375,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Nikolski,Nikolski,52.938,-168.868,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Ninilchik,Ninilchik,60.051,-151.669,Low Vulnerability,Low Vulnerability,Low_Vulnerability,*,0,0,0,0,0
+Noatak,Noatak,67.571,-162.965,Slightly Vulnerable,Highly Vulnerable,Highly_Vulnerable,*,3,3,3,3,2
+Nome,Nome,64.501,-165.406,Slightly Vulnerable,Highly Vulnerable,Vulnerable,*,2,3,3,2,2
+Nondalton,Nondalton,59.974,-154.846,Low Vulnerability,Low Vulnerability,Low_Vulnerability,*,0,0,0,0,0
+Noorvik,Noorvik,66.838,-161.033,Slightly Vulnerable,Highly Vulnerable,Highly_Vulnerable,*,3,3,3,3,3
+Northway Village,Northway,62.962,-141.937,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,2,3,1,1,1
+Nuiqsut,Nuiqsut,70.218,-150.976,Slightly Vulnerable,Highly Vulnerable,Highly_Vulnerable,*,3,1,3,3,3
+Nulato,Nulato,64.719,-158.103,Somewhat Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,**,2,3,2,1,3
+Nunam Iqua,Sheldon Point,62.534,-164.841,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,2,3,3,1,3
+Nunapitchuk,Nunapitchuk,60.897,-162.459,Slightly Vulnerable,Highly Vulnerable,Highly_Vulnerable,*,2,3,3,2,3
+Old Harbor,Old Harbor,57.203,-153.304,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Oscarville,Oscarville,60.727,-161.79,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,1,3,1,1,1
+Ouzinkie,Ouzinkie,57.924,-152.496,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Pedro Bay,Pedro Bay,59.791,-154.098,Low Vulnerability,Low Vulnerability,Low_Vulnerability,*,0,0,0,0,0
+Perryville,Perryville,55.912,-159.166,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Pilot Point,Pilot Point,57.564,-157.579,Low Vulnerability,Low Vulnerability,Low_Vulnerability,*,0,0,0,0,0
+Pilot Station,Pilot Station,61.939,-162.875,Somewhat Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,**,2,3,2,1,2
+Pitkas Point,Pitkas Point,62.033,-163.288,Somewhat Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,2
+Platinum,Platinum,59.013,-161.816,Low Vulnerability,Low Vulnerability,Low_Vulnerability,*,0,0,0,0,0
+Point Hope,Point Hope,68.348,-166.808,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,3,2,1,1,1
+Point Lay,Point Lay,69.757,-163.051,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,3,1,3,3,3
+Port Graham,Port Graham,59.351,-151.83,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Port Heiden,Port Heiden,56.957,-158.645,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Port Lions,Port Lions,57.868,-152.882,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Quinhagak,Quinhagak,59.749,-161.916,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,2,3,3,1,3
+Rampart,Rampart,65.505,-150.17,Slightly Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,3,3,2,1,2
+Red Devil,Red Devil,61.761,-157.313,Low Vulnerability,Low Vulnerability,Low_Vulnerability,**,0,0,0,0,0
+Ruby,Ruby,64.739,-155.487,Slightly Vulnerable,Vulnerable,Somewhat_Vulnerable,**,1,3,1,1,1
+Russian Mission,Russian Mission,61.786,-161.325,Slightly Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,3,1,2
+Saint George,Saint George,56.603,-169.545,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Saint Mary's,Saint Mary's,62.053,-163.166,Slightly Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,1
+Saint Michael,Saint Michael,63.478,-162.039,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,3,3,3,2,3
+Saint Paul,Saint Paul,57.122,-170.276,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Salamatof,Salamatof,60.588,-151.326,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Sand Point,Sand Point,55.34,-160.497,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Savoonga,Savoonga,63.69,-170.481,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,3,3,3,2,2
+Saxman,Saxman,55.318,-131.596,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Scammon Bay,Scammon Bay,61.843,-165.582,Low Vulnerability,Vulnerable,Somewhat_Vulnerable,*,1,3,1,2,1
+Selawik,Selawik,66.604,-160.007,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,3,2,3,3,3
+Seldovia Village,Seldovia,59.438,-151.711,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Shageluk,Shageluk,62.682,-159.562,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,2
+Shaktoolik,Shaktoolik,64.35,-161.183,Low Vulnerability,Vulnerable,Somewhat_Vulnerable,*,1,2,1,1,1
+Shishmaref,Shishmaref,66.257,-166.072,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,3,2,1,1,1
+Shungnak,Shungnak,66.888,-157.136,Slightly Vulnerable,Highly Vulnerable,Highly_Vulnerable,*,3,3,2,2,2
+Sleetmute,Sleetmute,61.703,-157.17,Low Vulnerability,Low Vulnerability,Low_Vulnerability,**,0,0,0,0,0
+South Naknek,South Naknek,58.716,-156.998,Slightly Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,1,3,2,1,2
+Stebbins,Stebbins,63.522,-162.288,Slightly Vulnerable,Highly Vulnerable,Highly_Vulnerable,*,2,3,2,2,3
+Stevens Village,Stevens Village,66.006,-149.091,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,2
+Stony River,Stony River,61.783,-156.588,Low Vulnerability,Low Vulnerability,Low_Vulnerability,*,0,0,0,0,0
+Takotna,Takotna,62.989,-156.064,Slightly Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,2
+Tanacross,Tanacross,63.385,-143.346,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,2
+Tanana,Tanana,65.172,-152.079,Low Vulnerability,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,2
+Tatitlek,Tatitlek,60.865,-146.679,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Tazlina,Tazlina,62.031,-145.416,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Teller,Teller,65.264,-166.361,Slightly Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,2,2,2,2,2
+Tetlin,Tetlin,63.311,-142.592,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,2,3,1,1,1
+Togiak,Togiak,59.062,-160.376,Low Vulnerability,Low Vulnerability,Low_Vulnerability,*,0,0,0,0,0
+Toksook Bay,Toksook Bay,60.53,-165.102,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,2,3,3,2,2
+Tuluksak,Tuluksak,61.103,-160.962,Slightly Vulnerable,Vulnerable,Somewhat_Vulnerable,**,2,3,1,1,2
+Tuntutuliak,Tuntutuliak,60.34,-162.669,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,2,3,3,3,3
+Tununak,Tununak,60.586,-165.256,Somewhat Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,**,2,3,2,1,2
+Twin Hills,Twin Hills,59.079,-160.275,Low Vulnerability,Low Vulnerability,Low_Vulnerability,*,0,0,0,0,0
+Tyonek,Tyonek,61.068,-151.137,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Ugashik,Ugashik,57.513,-157.397,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Umkumiute,Umkumiute,60.498,-165.199,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Unalakleet,Unalakleet,63.873,-160.788,Slightly Vulnerable,Somewhat Vulnerable,Somewhat_Vulnerable,**,2,3,1,1,1
+Unalaska,Unalaska,53.873,-166.533,Low Vulnerability,Low Vulnerability,Low_Vulnerability,***,0,0,0,0,0
+Upper Kalskag,Upper Kalskag,61.537,-160.305,Slightly Vulnerable,Highly Vulnerable,Somewhat_Vulnerable,*,2,3,2,1,2
+Venetie,Venetie,67.014,-146.419,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,2,3,1,1,1
+Wainwright,Wainwright,70.637,-160.038,Somewhat Vulnerable,Highly Vulnerable,Highly_Vulnerable,**,3,1,3,3,3
+Wales,Wales,65.61,-168.088,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,3,2,1,1,1
+White Mountain,White Mountain,64.681,-163.406,Low Vulnerability,Vulnerable,Slightly_Vulnerable,*,1,3,1,1,1
+Yakutat,Yakutat,59.547,-139.727,Low Vulnerability,Low Vulnerability,Low_Vulnerability,*,0,0,0,0,0
