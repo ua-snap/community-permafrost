@@ -74,8 +74,8 @@ map_layout = go.Layout(
     hovermode='closest',
     mapbox=dict(
         accesstoken=mapbox_access_token,
-        zoom=3,
-        center=dict(lat=65, lon=-146.5),
+        zoom=2.5,
+        center=dict(lat=65, lon=-152),
         style="light",
     ),
     showlegend=False,
