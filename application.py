@@ -76,6 +76,7 @@ map_layout = go.Layout(
         accesstoken=mapbox_access_token,
         zoom=3,
         center=dict(lat=65, lon=-146.5),
+        style="light",
     ),
     showlegend=False,
     margin=dict(l=0, r=0, t=0, b=0)
@@ -195,38 +196,41 @@ app.layout = html.Div(
                                 html.Div(
                                     className='column',
                                     children=[
-                                        dcc.Graph(
-                                            id='weather-plot',
-                                            config=config
-                                        )
-                                    ]
-                                )
-                            ]
-                        ),
-                        html.Div(
-                            className='columns',
-                            children=[
-                                html.Div(
-                                    className='column',
-                                    children=[
+                                        html.H1(
+                                            'Community Risk Data & Selection'
+                                        ),
+                                        html.Div(
+                                            'Community Permafrost data is available to explore local risks and hazards based on Massive Ice, Thaw Susceptibility, Existing Problems, Permafrost Occurrence, and Permafrost Temperature. (This is only Sample Text).<br>Select one or more communities to get more information about these risks.'
+                                        ),
                                         community
                                     ]
                                 ),
+                                html.Div(
+                                    className='column',
+                                    children=[
+                                        dcc.Graph(
+                                            id='map',
+                                            figure=map_figure,
+                                            config={
+                                                'displayModeBar': False,
+                                                'scrollZoom': False
+                                            }
+                                        )
+                                    ]
+                                ),
+
                             ]
                         ),
                         html.Div(
-                            className='column is-one-third',
+                            className='column',
                             children=[
                                 dcc.Graph(
-                                    id='map',
-                                    figure=map_figure,
-                                    config={
-                                        'displayModeBar': False,
-                                        'scrollZoom': False
-                                    }
+                                    id='weather-plot',
+                                    config=config
                                 )
                             ]
                         )
+
                     ]
                 )
             ]
