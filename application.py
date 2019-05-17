@@ -279,7 +279,7 @@ def make_plot(community):
         else:
             df = communities[communities['Community'] == i].iloc[0]
             
-        marker_texts = [df[11], df[10], df[12], df[8], df[9]]
+        marker_texts = [df[5], df[4], df[6], df[2], df[3]]
         marker_sizes = [x * 0.8 + 0.25 for x in marker_texts]
 
 
