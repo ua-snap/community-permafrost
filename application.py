@@ -299,8 +299,9 @@ def make_plot(community):
         else:
             df = communities[communities['Community'] == i].iloc[0]
             
-        marker_texts = [df[5], df[4], df[6], df[2], df[3]]
-        marker_sizes = [x * 0.8 + 0.25 for x in marker_texts]
+        marker_texts = [df[10], df[9], df[11], df[7], df[8]]
+        marker_size_vals = [df[5], df[4], df[6], df[2], df[3]]
+        marker_sizes = [x * 0.8 + 0.25 for x in marker_size_vals]
 
 
 
@@ -311,9 +312,8 @@ def make_plot(community):
             'name': df['Community'],
             'showlegend': False,
             'hovertext': marker_texts,
-            'hovertemplate': "Risk Level: %{text}",
+            'hovertemplate': "%{text}",
             'text': marker_texts,
-            #'mode': 'markers+text',
             'mode': 'markers',
             'marker': {
                 'color': marker_colors,
