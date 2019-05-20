@@ -243,7 +243,7 @@ app.layout = html.Div(
                                             figure=map_figure,
                                             config={
                                                 'displayModeBar': False,
-                                                'scrollZoom': False
+                                                'scrollZoom': True
                                             }
                                         )
                                     ]
