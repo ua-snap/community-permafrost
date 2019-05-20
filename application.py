@@ -242,8 +242,9 @@ app.layout = html.Div(
                                             id='map',
                                             figure=map_figure,
                                             config={
-                                                'displayModeBar': False,
-                                                'scrollZoom': True
+                                                'displayModeBar': 'hover',
+                                                'scrollZoom': True,
+                                                'modeBarButtonsToRemove': ["pan2d", "lasso2d", "toImage", "toggleHover", "select2d"]
                                             }
                                         )
                                     ]
