@@ -64,6 +64,8 @@ for i in risk_level:
     if i == 'None':
         risk_color.append('#808080')
 
+communities['Hover Title'] = communities[['Community', 'Risk Level']].apply(lambda x: ': '.join(x), axis=1)
+
 map_communities_trace = go.Scattermapbox(
     lat=communities['Latitude'],
     lon=communities['Longitude'],
@@ -72,7 +74,7 @@ map_communities_trace = go.Scattermapbox(
         'size': 15,
         'color': risk_color
     },
-    text=communities['Community'],
+    text=communities['Hover Title'],
     hoverinfo='text'
 )
 
