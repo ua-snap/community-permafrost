@@ -52,7 +52,17 @@ community = html.Div(
     ]
 )
 
-
+risk_level = communities['Risk Level']
+risk_color = []
+for i in risk_level:
+    if i == 'High':
+        risk_color.append('#cc0000')
+    if i == 'Medium':
+        risk_color.append('#cccc00')
+    if i == 'Low':
+        risk_color.append('#00cc00')
+    if i == 'None':
+        risk_color.append('#808080')
 
 map_communities_trace = go.Scattermapbox(
     lat=communities['Latitude'],
@@ -60,11 +70,7 @@ map_communities_trace = go.Scattermapbox(
     mode='markers',
     marker={
         'size': 15,
-        'color': 'rgb(80,80,80)'
-    },
-    line={
-        'color': 'rgb(0, 0, 0)',
-        'width': 2
+        'color': risk_color
     },
     text=communities['Community'],
     hoverinfo='text'
@@ -76,7 +82,7 @@ map_layout = go.Layout(
     hovermode='closest',
     mapbox=dict(
         accesstoken=mapbox_access_token,
-        zoom=2.5,
+        zoom=3,
         center=dict(lat=65, lon=-152),
         style="light",
     ),
