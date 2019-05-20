@@ -5,6 +5,7 @@ import json
 from random import randint
 import numpy as np
 import dash
+import dash_table
 import flask
 from dash.dependencies import Input, Output, State
 import plotly.graph_objs as go
@@ -107,6 +108,13 @@ config = {
         'scale': 1
     }
 }
+
+data_table = dash_table.DataTable(
+    id='community-table',
+    columns=[{"name": i, "id": i} for i in communities.columns],
+    data=communities.to_dict('records')
+)
+
 header_section = html.Div(
     className='header',
     children=[
@@ -260,7 +268,8 @@ app.layout = html.Div(
                                     config=config
                                 )
                             ]
-                        )
+                        ),
+                        data_table
                     ]
                 ),
                 help_text
@@ -284,6 +293,28 @@ def update_mine_site_dropdown(selected_on_map):
         return selected_on_map['points'][0]['text']
     # Return a default
     return 'Shishmaref'
+
+
+@app.callback(
+    [Output('community-table', 'data')],
+    inputs=[
+        Input('community', 'value')
+    ]
+)
+
+def update_graph(community):
+    print(type(communities))
+    commarray = {}
+    if (type(community) == str):
+        commarray = communities[communities['Community'] == community]
+    else:
+        for i, obj in enumerate(community):
+            print (obj)
+            if i == 0:
+                commarray = communities[communities['Community'] == obj]
+            else:
+                commarray = pd.concat([commarray,communities[communities['Community'] == obj]])
+    return [commarray.to_dict('records')]
 
 @app.callback(
     Output('weather-plot', 'figure'),
