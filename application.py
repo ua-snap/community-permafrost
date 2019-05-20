@@ -109,9 +109,12 @@ config = {
     }
 }
 
+table_columns = [{'name': 'Community', 'id': 'Community'}, {'name': 'Confidence', 'id': 'Confidence'}, {'name': 'Permafrost Occurrence', 'id': 'PO Label'}, {'name': 'Permafrost Temperature', 'id': 'PT Label'}, {'name': 'Thaw Susceptibility', 'id': 'TS Label'}, {'name': 'Massive Ice', 'id': 'MI Label'}, {'name': 'Existing Problems', 'id': 'EP Label'}, {'name': 'Rating Score', 'id': 'Rating Score'}, {'name': 'Risk Level', 'id': 'Risk Level'}]
+
 data_table = dash_table.DataTable(
     id='community-table',
-    columns=[{"name": i, "id": i} for i in communities.columns],
+    #columns=[{"name": i, "id": i} for i in communities.columns],
+    columns=table_columns,
     data=communities.to_dict('records')
 )
 
@@ -303,13 +306,11 @@ def update_mine_site_dropdown(selected_on_map):
 )
 
 def update_graph(community):
-    print(type(communities))
     commarray = {}
     if (type(community) == str):
         commarray = communities[communities['Community'] == community]
     else:
         for i, obj in enumerate(community):
-            print (obj)
             if i == 0:
                 commarray = communities[communities['Community'] == obj]
             else:
