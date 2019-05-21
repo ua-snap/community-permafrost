@@ -57,11 +57,11 @@ risk_level = communities['Risk Level']
 risk_color = []
 for i in risk_level:
     if i == 'High':
-        risk_color.append('#cc0000')
+        risk_color.append('#8d2520')
     if i == 'Medium':
-        risk_color.append('#cccc00')
+        risk_color.append('#F2CC50')
     if i == 'Low':
-        risk_color.append('#00cc00')
+        risk_color.append('#476220')
     if i == 'None':
         risk_color.append('#808080')
 
@@ -329,7 +329,7 @@ def make_plot(community):
 
     hazard_lu = ['Massive Ice', 'Thaw Susceptibility', 'Existing Problems', 'Permafrost Occurrence','Permafrost Temperature' ]
     mult = 200.0
-    marker_colors = ['#053F5A','#2AACB5','#DDE495','#EEB26B','#E1695B']
+    marker_colors = ['#1D94A5','#2A697D','#AC8B53','#2F798E','#7F9EA3']
 
 
 
