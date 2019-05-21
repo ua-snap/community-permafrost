@@ -369,30 +369,29 @@ color_lu = {
     ]
 )
 
-def update_map_colors(risklevel):
-    risk_level = communities[risklevel]
-    print(risklevel)
+def update_map_colors(risktype):
+    risk_level = communities[risktype]
     risk_color = []
-    if (risklevel == 'Risk Level'):
+    if (risktypet  == 'Risk Level'):
         for i in risk_level:
             if i == 'None':
-                risk_color.append(color_lu[risklevel]['None'])
+                risk_color.append(color_lu[risktype]['None'])
             if i == 'Low':
-                risk_color.append(color_lu[risklevel]['Low'])
+                risk_color.append(color_lu[risktype]['Low'])
             if i == 'Medium':
-                risk_color.append(color_lu[risklevel]['Medium'])
+                risk_color.append(color_lu[risktype]['Medium'])
             if i == 'High':
-                risk_color.append(color_lu[risklevel]['High'])
+                risk_color.append(color_lu[risktype]['High'])
     else:
         for i in risk_level:
             if i == 0:
-                risk_color.append(color_lu[risklevel]['None'])
+                risk_color.append(color_lu[risktype]['None'])
             if i == 1:
-                risk_color.append(color_lu[risklevel]['Low'])
+                risk_color.append(color_lu[risktype]['Low'])
             if i == 2:
-                risk_color.append(color_lu[risklevel]['Medium'])
+                risk_color.append(color_lu[risktype]['Medium'])
             if i == 3:
-                risk_color.append(color_lu[risklevel]['High'])
+                risk_color.append(color_lu[risktype]['High'])
 
     #newcomm = communities[['Community', str(risklevel)]].apply(lambda x: ': '.join(x), axis=1)
     map_communities_trace = go.Scattermapbox(
