@@ -134,7 +134,7 @@ config = {
     }
 }
 
-table_columns = [{'name': 'Community', 'id': 'Community'}, {'name': 'Confidence', 'id': 'Confidence'}, {'name': 'Permafrost Occurrence', 'id': 'PO Label'}, {'name': 'Permafrost Temperature', 'id': 'PT Label'}, {'name': 'Thaw Susceptibility', 'id': 'TS Label'}, {'name': 'Massive Ice', 'id': 'MI Label'}, {'name': 'Existing Problems', 'id': 'EP Label'}, {'name': 'Rating Score', 'id': 'Rating Score'}, {'name': 'Risk Level', 'id': 'Risk Level'}]
+table_columns = [{'name': 'Community', 'id': 'Community'}, {'name': 'Confidence', 'id': 'Confidence'}, {'name': 'Permafrost Occurrence', 'id': 'Permafrost Occurrence Label'}, {'name': 'Permafrost Temperature', 'id': 'Permafrost Temperature Label'}, {'name': 'Thaw Susceptibility', 'id': 'Thaw Susceptibility Label'}, {'name': 'Massive Ice', 'id': 'Massive Ice Label'}, {'name': 'Existing Problems', 'id': 'Eexisting Problems Label'}, {'name': 'Rating Score', 'id': 'Rating Score'}, {'name': 'Risk Level', 'id': 'Risk Level'}]
 
 data_table = dash_table.DataTable(
     id='community-table',
@@ -373,6 +373,7 @@ def update_map_colors(risktype):
     risk_level = communities[risktype]
     risk_color = []
     if (risktype  == 'Risk Level'):
+        newcomm_labels = communities[['Community', 'Risk Level']].apply(lambda x: ': '.join(x), axis=1)
         for i in risk_level:
             if i == 'None':
                 risk_color.append(color_lu[risktype]['None'])
@@ -383,6 +384,7 @@ def update_map_colors(risktype):
             if i == 'High':
                 risk_color.append(color_lu[risktype]['High'])
     else:
+        newcomm_labels = communities[['Community', risktype + ' Label']].apply(lambda x: ': '.join(x), axis=1)
         for i in risk_level:
             if i == 0:
                 risk_color.append(color_lu[risktype]['None'])
@@ -393,7 +395,7 @@ def update_map_colors(risktype):
             if i == 3:
                 risk_color.append(color_lu[risktype]['High'])
 
-    #newcomm = communities[['Community', str(risklevel)]].apply(lambda x: ': '.join(x), axis=1)
+
     map_communities_trace = go.Scattermapbox(
         lat=communities['Latitude'],
         lon=communities['Longitude'],
@@ -402,7 +404,7 @@ def update_map_colors(risktype):
             'size': 15,
             'color': risk_color
         },
-        text=communities['Hover Title'],
+        text=newcomm_labels,
         hoverinfo='text'
     )
     figure = {

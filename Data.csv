@@ -1,4 +1,4 @@
-Community,Confidence,Permafrost Occurrence,Permafrost Temperature,Thaw Susceptibility,Massive Ice,Existing Problems,PO Label,PT Label,TS Label,MI Label,EP Label,Rating Score,Risk Level,Latitude,Longitude
+Community,Confidence,Permafrost Occurrence,Permafrost Temperature,Thaw Susceptibility,Massive Ice,Existing Problems,Permafrost Occurrence Label,Permafrost Temperature Label,Thaw Susceptibility Label,Massive Ice Label,Existing Problems Label,Rating Score,Risk Level,Latitude,Longitude
 Akhiok,***,0,0,0,0,0,None,None,None,None,None,0,None,56.9467987341863,-154.173179606555
 Akiachak,**,1,3,2,1,2,Isolated,Warm,Medium (0.2 - 0.7 m),None,Moderate,9,Medium,60.9138001924915,-161.449077834511
 Akiak,***,0,0,0,0,0,None,None,None,None,None,0,None,60.9122001555086,-161.21387781055
