@@ -346,7 +346,7 @@ def update_map_colors(risklevel):
     else:
         for i in risk_level:
             if i == 0:
-                risk_color.append('#404040')
+                risk_color.append('#808080')
             if i == 1:
                 risk_color.append('#406080')
             if i == 2:
@@ -486,8 +486,8 @@ def make_plot(community):
     })
     '''
     plot_height = 500
-    if (type(community) == list):
-        print(len(community) * 100)
+    #if (type(community) == list):
+        #print(len(community) * 100)
         #plot_height = 100.0 * len(community)
     layout = {
         'barmode': 'grouped',
