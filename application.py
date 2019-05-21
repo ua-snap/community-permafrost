@@ -323,6 +323,45 @@ app.layout = html.Div(
     ]
 )
 
+color_lu = {
+    'Risk Level': {
+        'None': '#808080',
+        'Low': '#476220',
+        'Medium': '#F2CC50',
+        'High': '#8d2520'
+    },
+    'Massive Ice': {
+        'None': '#808080',
+        'Low': '#406080',
+        'Medium': '#4080c0',
+        'High': '#40a0f0'
+    },
+    'Thaw Susceptibility': {
+        'None': '#808080',
+        'Low': '#406080',
+        'Medium': '#4080c0',
+        'High': '#40a0f0'
+    },
+    'Existing Problems': {
+        'None': '#808080',
+        'Low': '#406080',
+        'Medium': '#4080c0',
+        'High': '#40a0f0'
+    },
+    'Permafrost Occurrence': {
+        'None': '#808080',
+        'Low': '#406080',
+        'Medium': '#4080c0',
+        'High': '#40a0f0'
+    },
+    'Permafrost Temperature': {
+        'None': '#808080',
+        'Low': '#406080',
+        'Medium': '#4080c0',
+        'High': '#40a0f0'
+    }
+}
+
 @app.callback(
     Output('map', 'figure'),
     [
@@ -332,30 +371,30 @@ app.layout = html.Div(
 
 def update_map_colors(risklevel):
     risk_level = communities[risklevel]
+    print(risklevel)
     risk_color = []
     if (risklevel == 'Risk Level'):
         for i in risk_level:
-            if i == 'High':
-                risk_color.append('#8d2520')
-            if i == 'Medium':
-                risk_color.append('#F2CC50')
-            if i == 'Low':
-                risk_color.append('#476220')
             if i == 'None':
-                risk_color.append('#808080')
+                risk_color.append(color_lu[risklevel]['None'])
+            if i == 'Low':
+                risk_color.append(color_lu[risklevel]['Low'])
+            if i == 'Medium':
+                risk_color.append(color_lu[risklevel]['Medium'])
+            if i == 'High':
+                risk_color.append(color_lu[risklevel]['High'])
     else:
         for i in risk_level:
             if i == 0:
-                risk_color.append('#808080')
+                risk_color.append(color_lu[risklevel]['None'])
             if i == 1:
-                risk_color.append('#406080')
+                risk_color.append(color_lu[risklevel]['Low'])
             if i == 2:
-                risk_color.append('#4080c0')
+                risk_color.append(color_lu[risklevel]['Medium'])
             if i == 3:
-                risk_color.append('#40a0f0')
+                risk_color.append(color_lu[risklevel]['High'])
 
-    newcomm = communities
-    #newcomm['HoverMap'] = communities[['Community', risk_level]].apply(lambda x: ': '.join(x), axis=1)
+    #newcomm = communities[['Community', str(risklevel)]].apply(lambda x: ': '.join(x), axis=1)
     map_communities_trace = go.Scattermapbox(
         lat=communities['Latitude'],
         lon=communities['Longitude'],
