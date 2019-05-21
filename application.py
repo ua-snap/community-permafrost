@@ -64,12 +64,14 @@ risklevel = html.Div(
                 dcc.Dropdown(
                     id='risklevel',
                     options=[
-                        {'label':'None', 'value':'None'},
-                        {'label':'Low', 'value':'Low'},
-                        {'label':'Medium', 'value':'Medium'},
-                        {'label':'High', 'value':'High'}
+                        {'label':'Risk Level', 'value':'Risk Level'},
+                        {'label':'Massive Ice', 'value':'Massive Ice'},
+                        {'label':'Thaw Susceptibility', 'value':'Thaw Susceptibility'},
+                        {'label':'Existing Problems', 'value':'Existing Problems'},
+                        {'label':'Permafrost Occurrence', 'value':'Permafrost Occurrence'},
+                        {'label':'Permafrost Temperature', 'value':'Permafrost Temperature'}
                     ],
-                    value='None'
+                    value='Risk Level'
                 )
             ]
         )
@@ -136,7 +138,6 @@ table_columns = [{'name': 'Community', 'id': 'Community'}, {'name': 'Confidence'
 
 data_table = dash_table.DataTable(
     id='community-table',
-    #columns=[{"name": i, "id": i} for i in communities.columns],
     columns=table_columns,
     data=communities.to_dict('records')
 )
@@ -323,6 +324,56 @@ app.layout = html.Div(
 )
 
 @app.callback(
+    Output('map', 'figure'),
+    [
+        Input('risklevel', 'value')
+    ]
+)
+
+def update_map_colors(risklevel):
+    risk_level = communities[risklevel]
+    risk_color = []
+    if (risklevel == 'Risk Level'):
+        for i in risk_level:
+            if i == 'High':
+                risk_color.append('#8d2520')
+            if i == 'Medium':
+                risk_color.append('#F2CC50')
+            if i == 'Low':
+                risk_color.append('#476220')
+            if i == 'None':
+                risk_color.append('#808080')
+    else:
+        for i in risk_level:
+            if i == 0:
+                risk_color.append('#404040')
+            if i == 1:
+                risk_color.append('#406080')
+            if i == 2:
+                risk_color.append('#4080c0')
+            if i == 3:
+                risk_color.append('#40a0f0')
+
+    newcomm = communities
+    #newcomm['HoverMap'] = communities[['Community', risk_level]].apply(lambda x: ': '.join(x), axis=1)
+    map_communities_trace = go.Scattermapbox(
+        lat=communities['Latitude'],
+        lon=communities['Longitude'],
+        mode='markers',
+        marker={
+            'size': 15,
+            'color': risk_color
+        },
+        text=communities['Hover Title'],
+        hoverinfo='text'
+    )
+    figure = {
+        'data': [map_communities_trace],
+        'layout': map_layout
+    }
+    return figure
+
+@app.callback(
     Output('community', 'value'),
     [
         Input('map', 'clickData')
@@ -391,7 +442,7 @@ def make_plot(community):
             # Normalize Risk Score from 0 - 3 from None, 6-15
             # 6-8 = Low, 9-12 = Medium, 13+ = High
             marker_size_vals[5] = math.ceil((marker_size_vals[5] - 5) / 3)
-        marker_sizes = [x * 0.8 + 0.25 for x in marker_size_vals]
+        marker_sizes = [x * 1.2 + 0.25 for x in marker_size_vals]
 
         figure['data'].append({
             'x': hazard_lu,
@@ -401,19 +452,21 @@ def make_plot(community):
             'hovertext': marker_texts,
             'hovertemplate': "%{text}",
             'text': marker_texts,
-            'mode': 'markers',
+            'textposition': 'center',
+            'mode': 'markers+text',
             'marker': {
                 'color': marker_colors,
                 'size': marker_sizes,
                 'sizeref': 0.05,
                 'sizemode': 'scaled',
-                'opacity': 1.0
+                'opacity': 0.6
             },
         })
 
     ref_sizes = [0.25, 1.05, 1.85, 2.65, 0]
     ref_text = [0, 1, 2, 3, '']
     ref_colors = 'rgb(150,150,150)'
+    '''
     figure['data'].append({
         'x': hazard_lu,
         'y': ['<b>Reference</b>', '<b>Reference</b>', '<b>Reference</b>', '<b>Reference</b>', '<b>Reference</b>'],
@@ -431,13 +484,18 @@ def make_plot(community):
             'sizemode': 'scaled'
         },
     })
+    '''
+    plot_height = 500
+    if (type(community) == list):
+        print(len(community) * 100)
+        #plot_height = 100.0 * len(community)
     layout = {
         'barmode': 'grouped',
         'hovermode': 'closest',
         'title': {
             'text': 'Community Permafrost Data',
         },
-	'height': 500,
+	'height': plot_height,
 	'yaxis': {
             'showline': 'false',
             'hoverformat': '1f'
