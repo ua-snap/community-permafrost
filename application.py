@@ -393,7 +393,7 @@ def update_map_colors(risktype):
             if i == 3:
                 risk_color.append(color_lu[risktype]['High'])
 
-    newcomm = communities[['Community', str(risklevel)]].apply(lambda x: ': '.join(x), axis=1)
+    #newcomm = communities[['Community', str(risklevel)]].apply(lambda x: ': '.join(x), axis=1)
     map_communities_trace = go.Scattermapbox(
         lat=communities['Latitude'],
         lon=communities['Longitude'],
