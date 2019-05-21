@@ -39,7 +39,7 @@ def calc_rolling_mean(array, ndays, location):
 community = html.Div(
     className='field',
     children=[
-        html.Label('Select Location'),
+        html.Label('Type the name of one or more communities in the box below to get started.'),
         html.Div(
             className='control',
             children=[
@@ -48,6 +48,28 @@ community = html.Div(
                     options=[{'label':name, 'value':name} for name in names],
                     value='Shishmaref',
                     multi=True
+                )
+            ]
+        )
+    ]
+)
+
+risklevel = html.Div(
+    className='field',
+    children=[
+        html.Label('Select a category to visualize on the map'),
+        html.Div(
+            className='control',
+            children=[
+                dcc.Dropdown(
+                    id='risklevel',
+                    options=[
+                        {'label':'None', 'value':'None'},
+                        {'label':'Low', 'value':'Low'},
+                        {'label':'Medium', 'value':'Medium'},
+                        {'label':'High', 'value':'High'}
+                    ],
+                    value='None'
                 )
             ]
         )
@@ -238,13 +260,30 @@ app.layout = html.Div(
                                 html.Div(
                                     className='column',
                                     children=[
-                                        html.H1(
-                                            'Community Risk Data & Selection'
+                                        html.Div(
+                                            className='column',
+                                            children=[
+                                                html.H2('Community Risk Data & Selection')
+                                            ]
                                         ),
                                         html.Div(
-                                            'Community Permafrost data is available to explore local risks and hazards based on Massive Ice, Thaw Susceptibility, Existing Problems, Permafrost Occurrence, and Permafrost Temperature. (This is only Sample Text).<br>Select one or more communities to get more information about these risks.'
+                                            className='column',
+                                            children=[
+                                                html.Div('Explore permafrost risks and hazards for rural communities in Alaska based on massive ice, thaw sysceptibility, existing infrastructure probelms, permafrost occurence and temperature.  These are tallied to create a cumulative rating score and risk level.')
+                                            ]
                                         ),
-                                        community
+                                        html.Div(
+                                            className='column',
+                                            children=[
+                                                risklevel
+                                            ]
+                                        ),
+                                        html.Div(
+                                            className='column',
+                                            children=[
+                                                community
+                                            ]
+                                        )
                                     ]
                                 ),
                                 html.Div(
