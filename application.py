@@ -3,6 +3,7 @@
 import os
 import json
 from random import randint
+import math
 import numpy as np
 import dash
 import dash_table
@@ -293,7 +294,8 @@ def update_mine_site_dropdown(selected_on_map):
     """ If user clicks on the map, update the drop down. """
     if selected_on_map is not None:
         # Return community name
-        return selected_on_map['points'][0]['text']
+        comm_val =  selected_on_map['points'][0]['text'].split(':')[0]
+        return comm_val
     # Return a default
     return 'Shishmaref'
 
@@ -327,9 +329,9 @@ def make_plot(community):
     figure = {}
     figure['data'] = []
 
-    hazard_lu = ['Massive Ice', 'Thaw Susceptibility', 'Existing Problems', 'Permafrost Occurrence','Permafrost Temperature' ]
+    hazard_lu = ['Massive Ice', 'Thaw Susceptibility', 'Existing Problems', 'Permafrost Occurrence','Permafrost Temperature', 'Risk Level' ]
     mult = 200.0
-    marker_colors = ['#1D94A5','#2A697D','#AC8B53','#2F798E','#7F9EA3']
+    marker_colors = ['#1D94A5','#2A697D','#AC8B53','#2F798E','#7F9EA3', '#EA906D']
 
 
 
@@ -340,16 +342,21 @@ def make_plot(community):
         else:
             df = communities[communities['Community'] == i].iloc[0]
             
-        marker_texts = [df[10], df[9], df[11], df[7], df[8]]
-        marker_size_vals = [df[5], df[4], df[6], df[2], df[3]]
+        marker_texts = [df[10], df[9], df[11], df[7], df[8], df[13]]
+        marker_size_vals = [df[5], df[4], df[6], df[2], df[3], df[12]]
+
+        if marker_size_vals[5] == 0:
+            # Leave marker size if 0
+            marker_size_vals[5] = 0
+        else:
+            # Normalize Risk Score from 0 - 3 from None, 6-15
+            # 6-8 = Low, 9-12 = Medium, 13+ = High
+            marker_size_vals[5] = math.ceil((marker_size_vals[5] - 5) / 3)
         marker_sizes = [x * 0.8 + 0.25 for x in marker_size_vals]
-
-
-
 
         figure['data'].append({
             'x': hazard_lu,
-            'y': [df['Community'], df['Community'], df['Community'], df['Community'], df['Community']],
+            'y': [df['Community'], df['Community'], df['Community'], df['Community'], df['Community'], df['Community']],
             'name': df['Community'],
             'showlegend': False,
             'hovertext': marker_texts,
