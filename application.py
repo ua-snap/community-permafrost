@@ -130,10 +130,11 @@ config = {
 table_columns = [{'name': 'Community', 'id': 'Community'}, {'name': 'Confidence', 'id': 'Confidence'}, {'name': 'Massive Ice', 'id': 'Massive Ice Table'}, {'name': 'Thaw Susceptibility', 'id': 'Thaw Susceptibility Table'}, {'name': 'Existing Problems', 'id': 'Existing Problems Table'}, {'name': 'Permafrost Occurrence', 'id': 'Permafrost Occurrence Table'}, {'name': 'Permafrost Temperature', 'id': 'Permafrost Temperature Table'}, {'name': 'Rating Score', 'id': 'Rating Score'}, {'name': 'Risk Level', 'id': 'Risk Level'}]
 
 # Initial data table setup
+initial=communities[communities['Community'] == 'Nome']
 data_table = dash_table.DataTable(
     id='community-table',
     columns=table_columns,
-    data=communities.to_dict('records')
+    data=initial.to_dict('records')
 )
 
 header_section = html.Div(
@@ -515,10 +516,10 @@ def make_plot(community, risktype):
         for i in hazard_lu: 
             # Risk Level / Rating Score have different column rules
             if (i == 'Risk Level'):
-                marker_texts.append(df['Risk Level'])
+                marker_texts.append('<b>' + df['Risk Level'] + '</b>')
                 marker_size_vals.append(df['Rating Score'])
             else: 
-                marker_texts.append(df[i + ' Label'])
+                marker_texts.append('<b>' + df[i + ' Label'] + '</b>')
                 marker_size_vals.append(df[i])
 
 
