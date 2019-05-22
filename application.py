@@ -134,6 +134,9 @@ initial=communities[communities['Community'] == 'Nome']
 data_table = dash_table.DataTable(
     id='community-table',
     columns=table_columns,
+    style_cell={
+        'whiteSpace': 'normal'
+    },
     data=initial.to_dict('records')
 )
 
