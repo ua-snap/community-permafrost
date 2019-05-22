@@ -314,7 +314,7 @@ app.layout = html.Div(
                                             config={
                                                 'displayModeBar': 'hover',
                                                 'scrollZoom': True,
-                                                'modeBarButtonsToRemove': ["pan2d", "lasso2d", "toImage", "toggleHover", "select2d"]
+                                                'modeBarButtonsToRemove': ["pan2d", "lasso2d", "toggleHover", "select2d"]
                                             }
                                         )
                                     ]
@@ -584,7 +584,7 @@ def make_plot(community, risktype):
         'barmode': 'grouped',
         'hovermode': 'closest',
         'title': {
-            'text': 'Community Permafrost Data',
+            'text': 'Community Permafrost Risks',
         },
 	'height': plot_height,
 	'yaxis': {
