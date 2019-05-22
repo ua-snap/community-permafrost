@@ -73,11 +73,11 @@ risk_level = communities['Risk Level']
 risk_color = []
 for i in risk_level:
     if i == 'High':
-        risk_color.append('#8d2520')
+        risk_color.append('#df684f')
     if i == 'Medium':
-        risk_color.append('#F2CC50')
+        risk_color.append('#f3cd4f')
     if i == 'Low':
-        risk_color.append('#476220')
+        risk_color.append('#5d804c')
     if i == 'None':
         risk_color.append('#808080')
 
@@ -127,7 +127,7 @@ config = {
 }
 
 # Limit columns for data table to labels
-table_columns = [{'name': 'Community', 'id': 'Community'}, {'name': 'Confidence', 'id': 'Confidence'}, {'name': 'Permafrost Occurrence', 'id': 'Permafrost Occurrence Label'}, {'name': 'Permafrost Temperature', 'id': 'Permafrost Temperature Label'}, {'name': 'Thaw Susceptibility', 'id': 'Thaw Susceptibility Label'}, {'name': 'Massive Ice', 'id': 'Massive Ice Label'}, {'name': 'Existing Problems', 'id': 'Eexisting Problems Label'}, {'name': 'Rating Score', 'id': 'Rating Score'}, {'name': 'Risk Level', 'id': 'Risk Level'}]
+table_columns = [{'name': 'Community', 'id': 'Community'}, {'name': 'Confidence', 'id': 'Confidence'}, {'name': 'Massive Ice', 'id': 'Massive Ice Table'}, {'name': 'Thaw Susceptibility', 'id': 'Thaw Susceptibility Table'}, {'name': 'Existing Problems', 'id': 'Existing Problems Table'}, {'name': 'Permafrost Occurrence', 'id': 'Permafrost Occurrence Table'}, {'name': 'Permafrost Temperature', 'id': 'Permafrost Temperature Table'}, {'name': 'Rating Score', 'id': 'Rating Score'}, {'name': 'Risk Level', 'id': 'Risk Level'}]
 
 # Initial data table setup
 data_table = dash_table.DataTable(
@@ -225,15 +225,35 @@ help_text = html.Div(
     children=[
         dcc.Markdown(
             """
-### Notes:
+
+### Learn more about the variables used in this tool
+
+This data summarizes permafrost hazard risks specific for rural communitities in Alaska. 
+
+It aggragates information from a number of different sources including DOT borehole logs and Mean annual ground temperature (MAGT) from the GI Permafrost Lab
+to an average for the community.
+
+#### How to interpret permafrost hazards for your community
+
+You can examine community permafrost data for certain key permafrost values including massive ice and thaw susceptibility.
+
+Communities with high massive ice and warm permafrost temperatures are of particular concern to infrastructure related issues.
+
+Rating Scores can be calculated by summing all categories using the associated values in the table. Risk Level translates this into a value
+
+#### Detailed information on categories
+
 * Confidence level: * – low (no reports with ground-ice data, no HMPs; estimation is based on general information on surficial geology and PF occurrence and analysis of available imagery); ** – medium (some information on permafrost conditions is available, including several geotechnical reports, HMPs, etc.); *** – high (comprehensive data are available, including numerous reports with geotechnical information, HMPs, and other sources, or we have sufficient information that there is no PF in the area).
 * Massive ice occurrence: 0 – no permafrost; 1 – no massive ice; 2 – sparse small to medium ice wedges (inactive or slightly active) and/or rare occurrence of buried ice; 3 – abundant large ice wedges close to the surface (yedoma and/or active modern wedges) and/or large bodies of buried glacier ice close to the surface. Occurrence of large ice bodies near the surface makes communities extremely vulnerable to PF thawing even in the areas with very low PF temperatures.
 * Thaw susceptibility: 0 – no permafrost; 1 – almost no excess ice, thaw settlement is less than ~0.1 m; 2 – thaw settlement is ~0.2-0.7 m; 3 – thaw settlement is more than 1 m.
 * Existing PF-related problems: 0 – no permafrost; 1 – no PF-related problems (or minor problems); 2 – Moderate problems; 3 – Severe problems. Estimation is based mainly on available documents (e.g., HMPs) and/or pers.com.
 * Permafrost Occurrence: 0 – no permafrost; 1 – mostly unfrozen soils with isolated patches of PF; 2 – discontinuous permafrost (intermittent distribution of PF and unfrozen soils, numerous open and/or closed taliks); 3 – continuous permafrost (rare taliks exist only under large and deep waterbodies).
-* Permaftost Temperature: 0 – no permafrost; 1 – Mean annual ground temperature (MAGT) < -5°C (< -8°C for saline soils); 2 – MAGT = -5 – -2°C (-8– -5°C for saline soils); 3 – MAGT = -2 –
+* Permafrost Temperature: 0 – no permafrost; 1 – Mean annual ground temperature (MAGT) < -5°C (< -8°C for saline soils); 2 – MAGT = -5 – -2°C (-8– -5°C for saline soils); 3 – MAGT = -2 –
 *0°C (-5– -3°C for saline soils).
-* Risk level based on the rating score: 0 – no permafrost; 5-8 – low risk level; 9-11 – medium risk level; 12-15 - high risk level. Rating score (cumulative risk level) is a sum of ranks for five different categories: PF temperature; thaw susceptibility (potential thaw settlement); occurrence of massive ice; existing PF-related problems. 
+* Risk level based on the rating score: 0 – no permafrost; 5-8 – low risk level; 9-11 – medium risk level; 12-15 - high risk level. Rating score (cumulative risk level) is a sum of ranks for five different categories: PF temperature; thaw susceptibility (potential thaw settlement); occurrence of massive ice; existing PF-related problems.
+
+###### More details
+* Information produced as part of the report [Risk Evaluation for Permafrost-Related Threats: Methods of Risk Estimation and Sources of Information](https://scholarworks.alaska.edu/handle/11122/10155)
             """,
             className='content is-size-5'
         )
@@ -326,39 +346,39 @@ app.layout = html.Div(
 color_lu = {
     'Risk Level': {
         'None': '#808080',
-        'Low': '#476220',
-        'Medium': '#F2CC50',
-        'High': '#8d2520'
+        'Low': '#5d804c',
+        'Medium': '#f3cd4f',
+        'High': '#df684f'
     },
     'Massive Ice': {
         'None': '#808080',
-        'Low': '#406080',
-        'Medium': '#4080c0',
-        'High': '#40a0f0'
+        'Low': '#dcf5f9',
+        'Medium': '#99e3ed',
+        'High': '#1D94A5'
     },
     'Thaw Susceptibility': {
         'None': '#808080',
-        'Low': '#406080',
-        'Medium': '#4080c0',
-        'High': '#40a0f0'
+        'Low': '#cce6ee',
+        'Medium': '#82c1d5',
+        'High': '#2A697D'
     },
     'Existing Problems': {
         'None': '#808080',
-        'Low': '#406080',
-        'Medium': '#4080c0',
-        'High': '#40a0f0'
+        'Low': '#dfd2bd',
+        'Medium': '#bfa67b',
+        'High': '#AC8B53'
     },
     'Permafrost Occurrence': {
         'None': '#808080',
-        'Low': '#406080',
-        'Medium': '#4080c0',
-        'High': '#40a0f0'
+        'Low': '#cde7ef',
+        'Medium': '#84c4d6',
+        'High': '#2F798E'
     },
     'Permafrost Temperature': {
         'None': '#808080',
-        'Low': '#406080',
-        'Medium': '#4080c0',
-        'High': '#40a0f0'
+        'Low': '#dae3e5',
+        'Medium': '#a1b8bc',
+        'High': '#7F9EA3'
     }
 }
 
