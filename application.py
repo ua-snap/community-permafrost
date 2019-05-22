@@ -127,7 +127,7 @@ config = {
 }
 
 # Limit columns for data table to labels
-table_columns = [{'name': 'Community', 'id': 'Community'}, {'name': 'Confidence', 'id': 'Confidence'}, {'name': 'Massive Ice', 'id': 'Massive Ice Table'}, {'name': 'Thaw Susceptibility', 'id': 'Thaw Susceptibility Table'}, {'name': 'Existing Problems', 'id': 'Existing Problems Table'}, {'name': 'Permafrost Occurrence', 'id': 'Permafrost Occurrence Table'}, {'name': 'Permafrost Temperature', 'id': 'Permafrost Temperature Table'}, {'name': 'Rating Score', 'id': 'Rating Score'}, {'name': 'Risk Level', 'id': 'Risk Level'}]
+table_columns = [{'name': 'Community', 'id': 'Community'}, {'name': 'Confidence', 'id': 'Confidence'}, {'name': 'Massive Ice', 'id': 'Massive Ice Label'}, {'name': 'Thaw Susceptibility', 'id': 'Thaw Susceptibility Label'}, {'name': 'Existing Problems', 'id': 'Existing Problems Label'}, {'name': 'Permafrost Occurrence', 'id': 'Permafrost Occurrence Label'}, {'name': 'Permafrost Temperature', 'id': 'Permafrost Temperature Label'}, {'name': 'Rating Score', 'id': 'Rating Score'}, {'name': 'Risk Level', 'id': 'Risk Level'}]
 
 # Initial data table setup
 initial=communities[communities['Community'] == 'Nome']
