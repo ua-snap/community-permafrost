@@ -457,10 +457,11 @@ def update_graph(community):
 @app.callback(
     Output('weather-plot', 'figure'),
     inputs=[
-        Input('community', 'value')
+        Input('community', 'value'),
+        Input('risk_type', 'value')
     ]
 )
-def make_plot(community):
+def make_plot(community, risktype):
     figure = {}
     figure['data'] = []
 
@@ -468,6 +469,11 @@ def make_plot(community):
     hazard_lu = ['Massive Ice', 'Thaw Susceptibility', 'Existing Problems', 'Permafrost Occurrence','Permafrost Temperature', 'Risk Level' ]
     mult = 200.0
     marker_colors = ['#1D94A5','#2A697D','#AC8B53','#2F798E','#7F9EA3', '#EA906D']
+    if risktype != 'Risk Level':
+        for i in range(0,len(hazard_lu)):
+            if hazard_lu[i] != risktype:
+                marker_colors[i] = '#808080'
+
 
     for i in community:
         if type(community) == str: 
