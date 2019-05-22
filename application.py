@@ -24,18 +24,7 @@ path_prefix='./'
 server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
 app = dash.Dash(__name__, server=server)
 
-def calc_rolling_mean(array, ndays, location):
-    annual_rolling_pcpt = []
-    annual_rolling_mean = []
-    rolling_pcpt = []
-    for i, (index,row) in enumerate(df.iterrows()):
-        rolling_pcpt.append(row[location])
-        if len(rolling_pcpt) > (ndays):
-            rolling_pcpt.pop(0)
-        annual_rolling_mean = np.mean(rolling_pcpt)
-        annual_rolling_pcpt = np.sum(rolling_pcpt)
-    return {'pcpt': annual_rolling_pcpt, 'mean': annual_rolling_mean}
-
+# Community Dropdown
 community = html.Div(
     className='field',
     children=[
@@ -54,7 +43,8 @@ community = html.Div(
     ]
 )
 
-risklevel = html.Div(
+# Risk Type Dropdown
+risk_type = html.Div(
     className='field',
     children=[
         html.Label('Select a category to visualize on the map'),
@@ -62,7 +52,7 @@ risklevel = html.Div(
             className='control',
             children=[
                 dcc.Dropdown(
-                    id='risklevel',
+                    id='risk_type',
                     options=[
                         {'label':'Risk Level', 'value':'Risk Level'},
                         {'label':'Massive Ice', 'value':'Massive Ice'},
@@ -78,6 +68,7 @@ risklevel = html.Div(
     ]
 )
 
+# Set defaults for map load.
 risk_level = communities['Risk Level']
 risk_color = []
 for i in risk_level:
@@ -90,6 +81,7 @@ for i in risk_level:
     if i == 'None':
         risk_color.append('#808080')
 
+# Concat risk level with community for hover titles
 communities['Hover Title'] = communities[['Community', 'Risk Level']].apply(lambda x: ': '.join(x), axis=1)
 
 map_communities_trace = go.Scattermapbox(
@@ -123,7 +115,7 @@ map_figure = go.Figure({
     'layout': map_layout
 })
 
-
+# Config options for bubble plot
 config = {
     'toImageButtonOptions': {
         'format': 'png',
@@ -134,8 +126,10 @@ config = {
     }
 }
 
+# Limit columns for data table to labels
 table_columns = [{'name': 'Community', 'id': 'Community'}, {'name': 'Confidence', 'id': 'Confidence'}, {'name': 'Permafrost Occurrence', 'id': 'Permafrost Occurrence Label'}, {'name': 'Permafrost Temperature', 'id': 'Permafrost Temperature Label'}, {'name': 'Thaw Susceptibility', 'id': 'Thaw Susceptibility Label'}, {'name': 'Massive Ice', 'id': 'Massive Ice Label'}, {'name': 'Existing Problems', 'id': 'Eexisting Problems Label'}, {'name': 'Rating Score', 'id': 'Rating Score'}, {'name': 'Risk Level', 'id': 'Risk Level'}]
 
+# Initial data table setup
 data_table = dash_table.DataTable(
     id='community-table',
     columns=table_columns,
@@ -276,7 +270,7 @@ app.layout = html.Div(
                                         html.Div(
                                             className='column',
                                             children=[
-                                                risklevel
+                                                risk_type
                                             ]
                                         ),
                                         html.Div(
@@ -313,7 +307,12 @@ app.layout = html.Div(
                                 )
                             ]
                         ),
-                        data_table
+                        html.Div(
+                            className='column',
+                            children=[
+                                data_table
+                            ]
+                        )
                     ]
                 ),
                 help_text
@@ -323,6 +322,7 @@ app.layout = html.Div(
     ]
 )
 
+# Color Look Up table used for different risk_type dropdown selections
 color_lu = {
     'Risk Level': {
         'None': '#808080',
@@ -362,10 +362,11 @@ color_lu = {
     }
 }
 
+# Callback for map object when risk_type dropdown is changed
 @app.callback(
     Output('map', 'figure'),
     [
-        Input('risklevel', 'value')
+        Input('risk_type', 'value')
     ]
 )
 
@@ -373,6 +374,7 @@ def update_map_colors(risktype):
     risk_level = communities[risktype]
     risk_color = []
     if (risktype  == 'Risk Level'):
+        # Create new labels / color map based on selected risktype and community
         newcomm_labels = communities[['Community', 'Risk Level']].apply(lambda x: ': '.join(x), axis=1)
         for i in risk_level:
             if i == 'None':
@@ -384,6 +386,7 @@ def update_map_colors(risktype):
             if i == 'High':
                 risk_color.append(color_lu[risktype]['High'])
     else:
+        # Create new labels / color map based on selected risktype and community
         newcomm_labels = communities[['Community', risktype + ' Label']].apply(lambda x: ': '.join(x), axis=1)
         for i in risk_level:
             if i == 0:
@@ -413,6 +416,7 @@ def update_map_colors(risktype):
     }
     return figure
 
+# Update selected community based on map marker click
 @app.callback(
     Output('community', 'value'),
     [
@@ -427,9 +431,9 @@ def update_mine_site_dropdown(selected_on_map):
         comm_val =  selected_on_map['points'][0]['text'].split(':')[0]
         return comm_val
     # Return a default
-    return 'Shishmaref'
+    return 'Nome'
 
-
+# Update data table when new community is selected
 @app.callback(
     [Output('community-table', 'data')],
     inputs=[
@@ -449,6 +453,7 @@ def update_graph(community):
                 commarray = pd.concat([commarray,communities[communities['Community'] == obj]])
     return [commarray.to_dict('records')]
 
+# Update main plot based on community selections
 @app.callback(
     Output('weather-plot', 'figure'),
     inputs=[
@@ -459,21 +464,28 @@ def make_plot(community):
     figure = {}
     figure['data'] = []
 
+    # Select ordering of columns
     hazard_lu = ['Massive Ice', 'Thaw Susceptibility', 'Existing Problems', 'Permafrost Occurrence','Permafrost Temperature', 'Risk Level' ]
     mult = 200.0
     marker_colors = ['#1D94A5','#2A697D','#AC8B53','#2F798E','#7F9EA3', '#EA906D']
-
-
-
 
     for i in community:
         if type(community) == str: 
             df = communities[communities['Community'] == community].iloc[0]
         else:
             df = communities[communities['Community'] == i].iloc[0]
-            
-        marker_texts = [df[10], df[9], df[11], df[7], df[8], df[13]]
-        marker_size_vals = [df[5], df[4], df[6], df[2], df[3], df[12]]
+   
+        marker_texts = []
+        marker_size_vals = []
+        for i in hazard_lu: 
+            # Risk Level / Rating Score have different column rules
+            if (i == 'Risk Level'):
+                marker_texts.append(df['Risk Level'])
+                marker_size_vals.append(df['Rating Score'])
+            else: 
+                marker_texts.append(df[i + ' Label'])
+                marker_size_vals.append(df[i])
+
 
         if marker_size_vals[5] == 0:
             # Leave marker size if 0
@@ -484,6 +496,7 @@ def make_plot(community):
             marker_size_vals[5] = math.ceil((marker_size_vals[5] - 5) / 3)
         marker_sizes = [x * 1.2 + 0.25 for x in marker_size_vals]
 
+        # Create trace for each community, to fit on one line
         figure['data'].append({
             'x': hazard_lu,
             'y': [df['Community'], df['Community'], df['Community'], df['Community'], df['Community'], df['Community']],
@@ -503,10 +516,10 @@ def make_plot(community):
             },
         })
 
+    '''
     ref_sizes = [0.25, 1.05, 1.85, 2.65, 0]
     ref_text = [0, 1, 2, 3, '']
     ref_colors = 'rgb(150,150,150)'
-    '''
     figure['data'].append({
         'x': hazard_lu,
         'y': ['<b>Reference</b>', '<b>Reference</b>', '<b>Reference</b>', '<b>Reference</b>', '<b>Reference</b>'],
@@ -527,8 +540,7 @@ def make_plot(community):
     '''
     plot_height = 500
     #if (type(community) == list):
-        #print(len(community) * 100)
-        #plot_height = 100.0 * len(community)
+        #plot_height = 100 * len(community)
     layout = {
         'barmode': 'grouped',
         'hovermode': 'closest',
@@ -554,4 +566,3 @@ def make_plot(community):
 
 if __name__ == '__main__':
     app.server.run(debug=True, threaded=True)
-    #app.run_server(debug=True)
