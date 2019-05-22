@@ -464,7 +464,7 @@ def update_mine_site_dropdown(selected_on_map):
         comm_val =  selected_on_map['points'][0]['text'].split(':')[0]
         return comm_val
     # Return a default
-    return 'Nome'
+    return ['Nome']
 
 # Update data table when new community is selected
 @app.callback(
