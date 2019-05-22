@@ -330,12 +330,21 @@ app.layout = html.Div(
                         html.Div(
                             className='column',
                             children=[
-                                data_table
+                                data_table,
+                                html.Br(),
+                                html.Br(),
+                                html.Br()
                             ]
                         )
                     ]
                 ),
-                help_text
+                html.Div(
+                    className='column',
+                    children=[
+                        help_text,
+
+                    ]
+                )
             ]
         ),
         footer
