@@ -227,6 +227,7 @@ UA is an AA/EO employer and educational institution and prohibits illegal discri
 help_text = html.Div(
     className='container',
     children=[
+        html.A(id='descriptions'),
         dcc.Markdown(
             """
 
@@ -282,13 +283,14 @@ app.layout = html.Div(
                                         html.Div(
                                             className='column',
                                             children=[
-                                                html.H2('Community Risk Data & Selection')
-                                            ]
-                                        ),
-                                        html.Div(
-                                            className='column',
-                                            children=[
-                                                html.Div('Explore permafrost risks and hazards for rural communities in Alaska based on massive ice, thaw susceptibility, existing infrastructure probelms, permafrost occurence and temperature.  These are tallied to create a cumulative rating score and risk level.')
+                                                dcc.Markdown(
+                                                    """    
+### Community Risk Data & Selection
+
+Explore permafrost risks and hazards for rural communities in Alaska based on massive ice, thaw susceptibility, existing infrastructure probelms, permafrost occurence and temperature. Detailed explanations for these variables can be found [here](#descriptions). These are tallied to create a cumulative rating score and risk level.
+                                                    """,
+                                                    className='content is-size-5'
+                                                )
                                             ]
                                         ),
                                         html.Div(
