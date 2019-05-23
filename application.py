@@ -288,7 +288,7 @@ app.layout = html.Div(
                                         html.Div(
                                             className='column',
                                             children=[
-                                                html.Div('Explore permafrost risks and hazards for rural communities in Alaska based on massive ice, thaw sysceptibility, existing infrastructure probelms, permafrost occurence and temperature.  These are tallied to create a cumulative rating score and risk level.')
+                                                html.Div('Explore permafrost risks and hazards for rural communities in Alaska based on massive ice, thaw susceptibility, existing infrastructure probelms, permafrost occurence and temperature.  These are tallied to create a cumulative rating score and risk level.')
                                             ]
                                         ),
                                         html.Div(
