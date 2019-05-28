@@ -606,4 +606,6 @@ def make_plot(community, risktype):
     return figure
 
 if __name__ == '__main__':
-    app.server.run(debug=True, threaded=True)
+    port = int(os.environ.get('PORT', 8080))
+    debug = os.environ.get('DEBUG', False)
+    app.server.run(debug=debug, port=port, threaded=True)
