@@ -461,16 +461,21 @@ def update_map_colors(risktype):
 @app.callback(
     Output('community', 'value'),
     [
-        Input('map', 'clickData')
+        Input('map', 'clickData'),
+    ],
+    [
+        State('community', 'value')
     ]
 )
 
-def update_mine_site_dropdown(selected_on_map):
+def update_mine_site_dropdown(selected_on_map, comm_state):
     """ If user clicks on the map, update the drop down. """
     if selected_on_map is not None:
         # Return community name
         comm_val =  selected_on_map['points'][0]['text'].split(':')[0]
-        return comm_val
+        if comm_val not in comm_state:
+            comm_state.append(comm_val)
+        return comm_state
     # Return a default
     return ['Nome']
 
