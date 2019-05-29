@@ -268,36 +268,35 @@ help_text = html.Div(
             """
 
 ### Learn more about the variables used in this tool
-
 This data summarizes permafrost hazard risks specific for rural communitities in Alaska. 
-
-It aggragates information from a number of different sources including DOT borehole logs and Mean annual ground temperature (MAGT) from the GI Permafrost Lab
+It aggragates information from a number of different sources including DOT borehole logs and mean annual ground temperature (MAGT) from the GI Permafrost Lab
 to an average for the community.
-
 #### How to interpret permafrost hazards for your community
-
 You can examine community permafrost data for certain key permafrost values including massive ice and thaw susceptibility.
-
-Communities with high massive ice and warm permafrost temperatures are of particular concern to infrastructure related issues.
-
-Rating Scores can be calculated by summing all categories using the associated values in the table. Risk Level translates this into a value
+Communities with high massive ice and warm permafrost temperatures are of particular concern for infrastructure related issues.
+Rating scores can be calculated by summing all categories using the associated values in the table. Risk levels translates this into a value.
 
 #### Detailed information on categories
 
-| Category                             | Description of levels                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Confidence level                     | &ast; – low (no reports with ground-ice data, no HMPs; estimation is based on general information on surficial geology and PF occurrence and analysis of available imagery); <br> &ast;&ast; – medium (some information on permafrost conditions is available, including several geotechnical reports, HMPs, etc.); <br> &ast;&ast;&ast; – high (comprehensive data are available, including numerous reports with geotechnical information, HMPs, and other sources, or we have sufficient information that there is no PF in the area) |
-| Massive ice occurrence               | 0 – no permafrost; <br> 1 – no massive ice; <br> 2 – sparse small to medium ice wedges (inactive or slightly active) and/or rare occurrence of buried ice; <br> 3 – abundant large ice wedges close to the surface (yedoma and/or active modern wedges) and/or large bodies of buried glacier ice close to the surface <br> <br>  Occurrence of large ice bodies near the surface makes communities extremely vulnerable to PF thawing even in the areas with very low PF temperatures.                                                  |
-| Thaw susceptibility                  | 0 – no permafrost; <br> 1 – almost no excess ice, thaw settlement is less than ~0.1 m; <br> 2 – thaw settlement is ~0.2-0.7 m; <br> 3 – thaw settlement is more than 1 m                                                                                                                                                                                                                                                                                                                                                                 |
-| Existing permafrost-related problems | 0 – no permafrost; <br> 1 – no PF-related problems (or minor problems); <br>  2 – Moderate problems; <br> 3 – Severe problems <br> <br> Estimation is based mainly on available documents (e.g., HMPs) and/or pers.com.                                                                                                                                                                                                                                                                                                                  |
-| Permafrost occurrence                | 0 – no permafrost; <br> 1 – mostly unfrozen soils with isolated patches of PF; <br> 2 – discontinuous permafrost (intermittent distribution of PF and unfrozen soils, numerous open and/or closed taliks); <br>  3 – continuous permafrost (rare taliks exist only under large and deep waterbodies)                                                                                                                                                                                                                                     |
-| Permafrost temperature               | 0 – no permafrost; <br> 1 – Mean annual ground temperature (MAGT) < -5°C (< -8°C for saline soils); <br> 2 – MAGT = -5 – -2°C (-8– -5°C for saline soils); <br> 3 – MAGT = -2 – *0°C (-5– -3°C for saline soils)                                                                                                                                                                                                                                                                                                                         |
-| Risk level based on the rating score | 0 – no permafrost; <br> 5-8 – low risk level; <br> 9-11 – medium risk level; <br> 12-15 - high risk level <br> <br> Rating score (cumulative risk level) is a sum of ranks for five different categories: permafrost occurrence and temperature; thaw susceptibility (potential thaw settlement); occurrence of massive ice and existing permafrost-related problems.                                                                                                                                                                    |
-
+| Category                             | Description of levels                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Confidence level                     | &ast; – low (no reports with ground-ice data, no HMPs; estimation is based on general information on surficial geology and PF occurrence and analysis of available imagery); <br/> &ast;&ast; – medium (some information on permafrost conditions is available, including several geotechnical reports, HMPs, etc.); <br/> &ast;&ast;&ast; – high (comprehensive data are available, including numerous reports with geotechnical information, HMPs, and other sources, or we have sufficient information that there is no PF in the area) |
+| Massive ice occurrence               | 0 – no permafrost; <br/> 1 – no massive ice; <br/> 2 – sparse small to medium ice wedges (inactive or slightly active) and/or rare occurrence of buried ice; <br/> 3 – abundant large ice wedges close to the surface (yedoma and/or active modern wedges) and/or large bodies of buried glacier ice close to the surface <br/> <br/>  Occurrence of large ice bodies near the surface makes communities extremely vulnerable to PF thawing even in the areas with very low PF temperatures.                                               |
+| Thaw susceptibility                  | 0 – no permafrost; <br/> 1 – almost no excess ice, thaw settlement is less than ~0.1 m; <br/> 2 – thaw settlement is ~0.2-0.7 m; <br/> 3 – thaw settlement is more than 1 m                                                                                                                                                                                                                                                                                                                                                                |
+| Existing permafrost-related problems | 0 – no permafrost; <br/> 1 – no PF-related problems (or minor problems); <br/>  2 – Moderate problems; <br/> 3 – Severe problems <br/> <br/> Estimation is based mainly on available documents (e.g., HMPs) and/or pers.com.                                                                                                                                                                                                                                                                                                               |
+| Permafrost occurrence                | 0 – no permafrost; <br/> 1 – mostly unfrozen soils with isolated patches of PF; <br/> 2 – discontinuous permafrost (intermittent distribution of PF and unfrozen soils, numerous open and/or closed taliks); <br/>  3 – continuous permafrost (rare taliks exist only under large and deep waterbodies)                                                                                                                                                                                                                                    |
+| Permafrost temperature               | 0 – no permafrost; <br/> 1 – Mean annual ground temperature (MAGT) < -5°C (< -8°C for saline soils); <br/> 2 – MAGT = -5 – -2°C (-8– -5°C for saline soils); <br/> 3 – MAGT = -2 – *0°C (-5– -3°C for saline soils)                                                                                                                                                                                                                                                                                                                        |
+| Risk level based on the rating score | 0 – no permafrost; <br/> 5-8 – low risk level; <br/> 9-11 – medium risk level; <br/> 12-15 - high risk level <br/> <br/> Rating score (cumulative risk level) is a sum of ranks for five different categories: permafrost occurrence and temperature; thaw susceptibility (potential thaw settlement); occurrence of massive ice and existing permafrost-related problems.                                                                                                                                                                 |
 ###### More details
-* Information produced as part of the report [Risk Evaluation for Permafrost-Related Threats: Methods of Risk Estimation and Sources of Information](https://scholarworks.alaska.edu/handle/11122/10155)
+Information produced as part of the report:
             """,
             className='content is-size-5'
+        ),
+        html.Div(
+            className='content is-size-5',
+            children=[
+                html.A('Risk Evaluation for Permafrost-Related Threats: Methods of Risk Estimation and Sources of Information', href='https://scholarworks.alaska.edu/handle/11122/10155', target='_blank')
+            ]
         )
     ]
 )
@@ -322,9 +321,7 @@ app.layout = html.Div(
                                             children=[
                                                 dcc.Markdown(
                                                     """    
-### Community Risk Data & Selection
-
-Explore permafrost risks and hazards for rural communities in Alaska based on massive ice, thaw susceptibility, existing infrastructure probelms, permafrost occurence and temperature. Detailed explanations for these variables can be found [here](#descriptions). These are tallied to create a cumulative rating score and risk level.
+Explore permafrost risks and hazards for rural communities in Alaska based on massive ice, thaw susceptibility, existing infrastructure probelms, permafrost occurence and temperature. Detailed explanations for these variables can be found [below](#descriptions). These are tallied to create a cumulative rating score and risk level.
                                                     """,
                                                     className='content is-size-5'
                                                 )
