@@ -20,7 +20,7 @@ server = flask.Flask(__name__)
 mapbox_access_token = os.environ['MAPBOX_ACCESS_TOKEN']
 communities = pd.read_csv('Data.csv')
 names = communities['Community']
-path_prefix='./'
+path_prefix = os.environ['REQUESTS_PATHNAME_PREFIX']
 server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
 app = dash.Dash(__name__, server=server)
 
