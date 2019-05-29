@@ -28,6 +28,7 @@ app = dash.Dash(__name__, server=server)
 # if this variable (application) isn't set you will get a WSGI error.
 application = app.server
 app.title = 'SNAP - Community Permafrost Data'
+app.config.requests_pathname_prefix = os.environ['REQUESTS_PATHNAME_PREFIX']
 
 # Community Dropdown
 community = html.Div(
