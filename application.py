@@ -41,7 +41,7 @@ community = html.Div(
                 dcc.Dropdown(
                     id='community',
                     options=[{'label':name, 'value':name} for name in names],
-                    value='Shishmaref',
+                    value='Nome',
                     multi=True
                 )
             ]
