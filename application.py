@@ -141,7 +141,8 @@ data_table = dash_table.DataTable(
     id='community-table',
     columns=table_columns,
     style_cell={
-        'whiteSpace': 'normal'
+        'whiteSpace': 'normal',
+        'textAlign': 'left'
     },
     data=initial.to_dict('records')
 )
