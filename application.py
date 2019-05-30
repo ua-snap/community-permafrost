@@ -13,6 +13,7 @@ from dash.dependencies import Input, Output, State
 import plotly.graph_objs as go
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_dangerously_set_inner_html
 
 import pandas as pd
 import geopandas as gpd
@@ -266,39 +267,126 @@ help_text = html.Div(
     className='container',
     children=[
         html.A(id='descriptions'),
-        dcc.Markdown(
+        dash_dangerously_set_inner_html.DangerouslySetInnerHTML(
             """
 
-### Learn more about the variables used in this tool
-This data summarizes permafrost hazard risks specific for rural communitities in Alaska. 
-It aggragates information from a number of different sources including DOT borehole logs and mean annual ground temperature (MAGT) from the GI Permafrost Lab
-to an average for the community.
-#### How to interpret permafrost hazards for your community
-You can examine community permafrost data for certain key permafrost values including massive ice and thaw susceptibility.
-Communities with high massive ice and warm permafrost temperatures are of particular concern for infrastructure related issues.
-Rating scores can be calculated by summing all categories using the associated values in the table. Risk levels translates this into a value.
+<div class="content is-size-5">
 
-#### Detailed information on categories
+<h3>Learn more about the variables used in this tool</h3>
 
-| Category                             | Description of levels                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Confidence level                     | &ast; – low (no reports with ground-ice data, no HMPs; estimation is based on general information on surficial geology and PF occurrence and analysis of available imagery);  &ast;&ast; – medium (some information on permafrost conditions is available, including several geotechnical reports, HMPs, etc.);  &ast;&ast;&ast; – high (comprehensive data are available, including numerous reports with geotechnical information, HMPs, and other sources, or we have sufficient information that there is no PF in the area) |
-| Massive ice occurrence               | 0 – no permafrost;  1 – no massive ice;  2 – sparse small to medium ice wedges (inactive or slightly active) and/or rare occurrence of buried ice;  3 – abundant large ice wedges close to the surface (yedoma and/or active modern wedges) and/or large bodies of buried glacier ice close to the surface  Occurrence of large ice bodies near the surface makes communities extremely vulnerable to PF thawing even in the areas with very low PF temperatures.                                               |
-| Thaw susceptibility                  | 0 – no permafrost;  1 – almost no excess ice, thaw settlement is less than ~0.1 m;   2 – thaw settlement is ~0.2-0.7 m;  3 – thaw settlement is more than 1 m                                                                                                                                                                                                                                                                                                                                                                |
-| Existing permafrost-related problems | 0 – no permafrost;  1 – no PF-related problems (or minor problems);  2 – Moderate problems;  3 – Severe problems  Estimation is based mainly on available documents (e.g., HMPs) and/or pers.com.                                                                                                                                                                                                                                                                                                               |
-| Permafrost occurrence                | 0 – no permafrost;  1 – mostly unfrozen soils with isolated patches of PF;  2 – discontinuous permafrost (intermittent distribution of PF and unfrozen soils, numerous open and/or closed taliks);  3 – continuous permafrost (rare taliks exist only under large and deep waterbodies)                                                                                                                                                                                                                                    |
-| Permafrost temperature               | 0 – no permafrost;  1 – Mean annual ground temperature (MAGT) < -5°C (< -8°C for saline soils);  2 – MAGT = -5 – -2°C (-8– -5°C for saline soils);  3 – MAGT = -2 – *0°C (-5– -3°C for saline soils)                                                                                                                                                                                                                                                                                                                        |
-| Risk level based on the rating score | 0 – no permafrost;  5-8 – low risk level;  9-11 – medium risk level;  12-15 - high risk level  Rating score (cumulative risk level) is a sum of ranks for five different categories: permafrost occurrence and temperature; thaw susceptibility (potential thaw settlement); occurrence of massive ice and existing permafrost-related problems.                                                                                                                                                                 |
-###### More details
-Information produced as part of the report:
-            """,
-            className='content is-size-5'
-        ),
-        html.Div(
-            className='content is-size-5',
-            children=[
-                html.A('Risk Evaluation for Permafrost-Related Threats: Methods of Risk Estimation and Sources of Information', href='https://scholarworks.alaska.edu/handle/11122/10155', target='_blank')
-            ]
+<p>This data summarizes permafrost hazard risks specific for rural communitities in Alaska.
+    It aggragates information from a number of different sources including DOT borehole logs and mean annual ground temperature (MAGT) from the GI Permafrost Lab
+    to an average for the community.</p>
+
+<h4>How to interpret permafrost hazards for your community</h4>
+
+<p>You can examine community permafrost data for certain key permafrost values including massive ice and thaw susceptibility.  Communities with high massive ice and warm permafrost temperatures are of particular concern for infrastructure related issues.  Rating scores can be calculated by summing all categories using the associated values in the table. Risk levels translates this into a value.</p>
+
+<h4>Detailed information on categories</h4>
+
+<table class="legend">
+    <thead>
+        <tr>
+            <th scope="col">Category</td>
+            <th scope="col">Description of levels</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Confidence level</th>
+            <td>
+                <ul>
+                    <li><strong>*</strong> – low (no reports with ground-ice data, no HMPs; estimation is based on general information on surficial geology and PF occurrence and analysis of available imagery)
+                    </li>
+                    <li><strong>**</strong> – medium (some information on permafrost conditions is available, including several geotechnical reports, HMPs, etc.)
+                    </li>
+                    <li><strong>***</strong> – high (comprehensive data are available, including numerous reports with geotechnical information, HMPs, and other sources, or we have sufficient information that there is no PF in the area)
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Massive ice occurrence</th>
+            <td>
+                <ul>
+                    <li>0 – no permafrost</li>
+                    <li>1 – no massive ice</li>
+                    <li>2 – sparse small to medium ice wedges (inactive or slightly active) and/or rare occurrence of buried ice</li>
+                    <li>3 – abundant large ice wedges close to the surface (yedoma and/or active modern wedges) and/or large bodies of buried glacier ice close to the surface  Occurrence of large ice bodies near the surface makes communities extremely vulnerable to PF thawing even in the areas with very low PF temperatures.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Thaw susceptibility</th>
+            <td>
+                <ul>
+                    <li>0 – no permafrost</li>
+                    <li>1 – almost no excess ice, thaw settlement is less than ~0.1 m
+                    <li>2 – thaw settlement is ~0.2-0.7 m</li>
+                    <li>3 – thaw settlement is more than 1 m</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Existing permafrost-related problems</th>
+            <td>
+                <ul>
+                    <li>0 – no permafrost</li>
+                    <li>1 – no PF-related problems (or minor problems)
+                    <li>2 – Moderate problems</li>
+                    <li>3 – Severe problems</li>
+                </ul>
+                <p>Estimation is based mainly on available documents (e.g., HMPs) and/or pers.com.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Permafrost occurrence</th>
+            <td>
+                <ul>
+                    <li>0 – no permafrost</li>
+                    <li>1 – mostly unfrozen soils with isolated patches of PF</li>
+                    <li>2 – discontinuous permafrost (intermittent distribution of PF and unfrozen soils, numerous open and/or closed taliks)</li>
+                    <li>3 – continuous permafrost (rare taliks exist only under large and deep waterbodies)</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Permafrost temperature</th>
+            <td>
+                <ul>
+                    <li>0 – no permafrost</li>
+                    <li>1 – Mean annual ground temperature (MAGT) < -5°C (< -8°C for saline soils)</li>
+                    <li>2 – MAGT = -5 – -2°C (-8– -5°C for saline soils)</li>
+                    <li>3 – MAGT = -2 – *0°C (-5– -3°C for saline soils)</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Risk level based on the rating score</th>
+            <td>
+                <ul>
+                    <li>0 – no permafrost</li>
+                    <li>5-8 – low risk level</li>
+                    <li>9-11 – medium risk level</li>
+                    <li>12-15 - high risk level</li>
+                </ul>
+                <p>Rating score (cumulative risk level) is a sum of ranks for five different categories: permafrost occurrence and temperature; thaw susceptibility (potential thaw settlement); occurrence of massive ice and existing permafrost-related problems.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h5>More details</h5>
+
+<p>Information produced as part of the report:<br/>
+<a rel="noopener" target="_blank" href="https://scholarworks.alaska.edu/handle/11122/10155">
+Risk Evaluation for Permafrost-Related Threats: Methods of Risk Estimation and Sources of Information</a>
+</p>
+
+</div>
+            """
         )
     ]
 )

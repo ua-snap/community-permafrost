@@ -88,3 +88,17 @@ tspan.line:nth-child(1) {
 ._dash-undo-redo {
 	display: none;
 }
+
+table.legend ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+table.legend ul li strong {
+	display: inline-block;
+	font-size: 200%;
+	position: relative;
+	top: 1ex;
+	line-height: 50%;
+}
