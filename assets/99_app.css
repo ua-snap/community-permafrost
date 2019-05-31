@@ -102,3 +102,25 @@ table.legend ul li strong {
 	top: 1ex;
 	line-height: 50%;
 }
+
+table th[scope="row"].legend {
+	color: #fff;
+}
+table th.legend.thaw-susceptibility {
+	background-color: #2A697D;
+}
+table th.legend.massive-ice {
+	background-color: #1D94A5;
+}
+table th.legend.existing-problems {
+	background-color: #AC8B53;
+}
+table th.legend.permafrost-occurrence {
+	background-color: #2F798E;
+}
+table th.legend.permafrost-temperature {
+	background-color: #7F9EA3;
+}
+table th.legend.risk-level {
+	background-color: #df684f;
+}

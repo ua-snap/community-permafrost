@@ -306,7 +306,7 @@ help_text = html.Div(
             </td>
         </tr>
         <tr>
-            <th scope="row">Massive ice occurrence</th>
+            <th scope="row" class="legend massive-ice">Massive ice occurrence</th>
             <td>
                 <ul>
                     <li>0 – no permafrost</li>
@@ -317,7 +317,7 @@ help_text = html.Div(
             </td>
         </tr>
         <tr>
-            <th scope="row">Thaw susceptibility</th>
+            <th scope="row" class="legend thaw-susceptibility">Thaw susceptibility</th>
             <td>
                 <ul>
                     <li>0 – no permafrost</li>
@@ -328,7 +328,7 @@ help_text = html.Div(
             </td>
         </tr>
         <tr>
-            <th scope="row">Existing permafrost-related problems</th>
+            <th scope="row" class="legend existing-problems">Existing permafrost-related problems</th>
             <td>
                 <ul>
                     <li>0 – no permafrost</li>
@@ -341,7 +341,7 @@ help_text = html.Div(
             </td>
         </tr>
         <tr>
-            <th scope="row">Permafrost occurrence</th>
+            <th scope="row" class="legend permafrost-occurrence">Permafrost occurrence</th>
             <td>
                 <ul>
                     <li>0 – no permafrost</li>
@@ -352,7 +352,7 @@ help_text = html.Div(
             </td>
         </tr>
         <tr>
-            <th scope="row">Permafrost temperature</th>
+            <th scope="row" class="legend permafrost-temperature">Permafrost temperature</th>
             <td>
                 <ul>
                     <li>0 – no permafrost</li>
@@ -363,7 +363,7 @@ help_text = html.Div(
             </td>
         </tr>
         <tr>
-            <th scope="row">Risk level based on the rating score</th>
+            <th scope="row" class="legend risk-level">Risk level based on the rating score</th>
             <td>
                 <ul>
                     <li>0 – no permafrost</li>
