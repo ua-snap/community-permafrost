@@ -416,7 +416,7 @@ app.layout = html.Div(
                                             children=[
                                                 dcc.Markdown(
                                                     """    
-Explore permafrost risks and hazards for rural communities in Alaska based on massive ice, thaw susceptibility, existing infrastructure probelms, permafrost occurence and temperature. Detailed explanations for these variables can be found [below](#descriptions). These are tallied to create a cumulative rating score and risk level.
+Explore permafrost risks and hazards for rural communities in Alaska based on massive ice, thaw susceptibility, existing infrastructure problems, permafrost occurrence and temperature. Detailed explanations for these variables can be found [below](#descriptions). These are tallied to create a cumulative rating score and risk level.
                                                     """,
                                                     className="content is-size-5",
                                                 )
