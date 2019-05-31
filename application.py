@@ -313,8 +313,8 @@ help_text = html.Div(
                     <li>1 – no massive ice</li>
                     <li>2 – sparse small to medium ice wedges (inactive or slightly active) and/or rare occurrence of buried ice</li>
                     <li>3 – abundant large ice wedges close to the surface (yedoma and/or active modern wedges) and/or large bodies of buried glacier ice close to the surface
-                    <p>Occurrence of large ice bodies near the surface makes communities extremely vulnerable to PF thawing even in the areas with very low PF temperatures.</p></li>
                 </ul>
+                <p>Occurrence of large ice bodies near the surface makes communities extremely vulnerable to PF thawing even in the areas with very low PF temperatures.</p></li>
             </td>
         </tr>
         <tr>
