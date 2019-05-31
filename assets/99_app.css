@@ -107,20 +107,20 @@ table th[scope="row"].legend {
 	color: #fff;
 }
 table th.legend.thaw-susceptibility {
-	background-color: #2A697D;
+	background-color: rgb(42,105,125,0.6);
 }
 table th.legend.massive-ice {
-	background-color: #1D94A5;
+	background-color: rgba(29,148,165,0.6);
 }
 table th.legend.existing-problems {
-	background-color: #AC8B53;
+	background-color: rgb(172,139,83,0.6);
 }
 table th.legend.permafrost-occurrence {
-	background-color: #2F798E;
+	background-color: rgb(47,121,142,0.6);
 }
 table th.legend.permafrost-temperature {
-	background-color: #7F9EA3;
+	background-color: rgb(127,158,163,0.6);
 }
 table th.legend.risk-level {
-	background-color: #df684f;
+	background-color: rgb(223,104,79,0.6);
 }
