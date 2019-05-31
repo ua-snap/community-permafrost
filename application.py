@@ -43,7 +43,7 @@ community = html.Div(
                 dcc.Dropdown(
                     id='community',
                     options=[{'label':name, 'value':name} for name in names],
-                    value='Shishmaref',
+                    value='Nome',
                     multi=True
                 )
             ]
@@ -223,6 +223,16 @@ footer = html.Footer(
                     ]
                 ),
                 html.A(
+                    href='https://http://ine.uaf.edu/',
+                    target='_blank',
+                    className='level-item',
+                    children=[
+                        html.Img(
+                            src=path_prefix + 'assets/INE.png'
+                        )
+                    ]
+                ),
+                html.A(
                     href='https://uaf.edu/uaf/',
                     target='_blank',
                     className='level-item',
@@ -269,7 +279,6 @@ help_text = html.Div(
         html.A(id='descriptions'),
         dash_dangerously_set_inner_html.DangerouslySetInnerHTML(
             """
-
 <div class="content is-size-5">
 
 <h3>Learn more about the variables used in this tool</h3>
