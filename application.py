@@ -300,11 +300,11 @@ help_text = html.Div(
             <th scope="row">Confidence level</th>
             <td>
                 <ul>
-                    <li><strong>*</strong> – low (no reports with ground-ice data, no HMPs; estimation is based on general information on surficial geology and PF occurrence and analysis of available imagery)
+                    <li><strong>*</strong> – low (no reports with ground-ice data, no HMPs; estimation is based on general information on surficial geology and permafrost occurrence and analysis of available imagery)
                     </li>
                     <li><strong>**</strong> – medium (some information on permafrost conditions is available, including several geotechnical reports, HMPs, etc.)
                     </li>
-                    <li><strong>***</strong> – high (comprehensive data are available, including numerous reports with geotechnical information, HMPs, and other sources, or we have sufficient information that there is no PF in the area)
+                    <li><strong>***</strong> – high (comprehensive data are available, including numerous reports with geotechnical information, HMPs, and other sources, or we have sufficient information that there is no permafrost in the area)
                     </li>
                 </ul>
             </td>
@@ -318,7 +318,7 @@ help_text = html.Div(
                     <li>2 – sparse small to medium ice wedges (inactive or slightly active) and/or rare occurrence of buried ice</li>
                     <li>3 – abundant large ice wedges close to the surface (yedoma and/or active modern wedges) and/or large bodies of buried glacier ice close to the surface
                 </ul>
-                <p>Occurrence of large ice bodies near the surface makes communities extremely vulnerable to PF thawing even in the areas with very low PF temperatures.</p></li>
+                <p>Occurrence of large ice bodies near the surface makes communities extremely vulnerable to permafrost thawing even in the areas with very low permafrost temperatures.</p></li>
             </td>
         </tr>
         <tr>
@@ -337,7 +337,7 @@ help_text = html.Div(
             <td>
                 <ul>
                     <li>0 – no permafrost</li>
-                    <li>1 – no PF-related problems (or minor problems)
+                    <li>1 – no permafrost-related problems (or minor problems)
                     <li>2 – Moderate problems</li>
                     <li>3 – Severe problems</li>
                 </ul>
@@ -350,8 +350,8 @@ help_text = html.Div(
             <td>
                 <ul>
                     <li>0 – no permafrost</li>
-                    <li>1 – mostly unfrozen soils with isolated patches of PF</li>
-                    <li>2 – discontinuous permafrost (intermittent distribution of PF and unfrozen soils, numerous open and/or closed taliks)</li>
+                    <li>1 – mostly unfrozen soils with isolated patches of permafrost</li>
+                    <li>2 – discontinuous permafrost (intermittent distribution of permafrost and unfrozen soils, numerous open and/or closed taliks)</li>
                     <li>3 – continuous permafrost (rare taliks exist only under large and deep waterbodies)</li>
                 </ul>
             </td>
@@ -560,7 +560,7 @@ def update_map_colors(risktype):
     [Input("map", "clickData")],
     [State("community", "value")],
 )
-def update_mine_site_dropdown(selected_on_map, comm_state):
+def update_site_dropdown(selected_on_map, comm_state):
     """ If user clicks on the map, update the drop down. """
     if selected_on_map is not None:
         # Return community name
