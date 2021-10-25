@@ -7,30 +7,29 @@ from random import randint
 import math
 import numpy as np
 import dash
-import dash_table
 import flask
 from dash.dependencies import Input, Output, State
 import plotly.graph_objs as go
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
+from dash import dash_table
 import dash_dangerously_set_inner_html
-
 import pandas as pd
 import geopandas as gpd
 
-server = flask.Flask(__name__)
+
 mapbox_access_token = os.environ["MAPBOX_ACCESS_TOKEN"]
 communities = pd.read_csv("Data.csv")
 names = communities["Community"]
-path_prefix = os.environ["REQUESTS_PATHNAME_PREFIX"]
-server.secret_key = os.environ.get("secret_key", str(randint(0, 1000000)))
-app = dash.Dash(__name__, server=server)
+path_prefix = os.environ["DASH_REQUESTS_PATHNAME_PREFIX"]
+
+
+app = dash.Dash(__name__)
 
 # AWS Elastic Beanstalk looks for application by default,
 # if this variable (application) isn't set you will get a WSGI error.
 application = app.server
 app.title = "SNAP - Community Permafrost Data"
-app.config.requests_pathname_prefix = os.environ["REQUESTS_PATHNAME_PREFIX"]
 
 # Community Dropdown
 community = html.Div(
@@ -561,7 +560,7 @@ def update_map_colors(risktype):
     [State("community", "value")],
 )
 def update_site_dropdown(selected_on_map, comm_state):
-    """ If user clicks on the map, update the drop down. """
+    """If user clicks on the map, update the drop down."""
     if selected_on_map is not None:
         # Return community name
         comm_val = selected_on_map["points"][0]["text"].split(":")[0]
@@ -708,6 +707,4 @@ def make_plot(community, risktype):
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8080))
-    debug = os.environ.get("DEBUG", False)
-    app.server.run(debug=debug, port=port, threaded=True)
+    application.run(debug=True, port=8080)

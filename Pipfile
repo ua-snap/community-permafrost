@@ -5,19 +5,14 @@ name = "pypi"
 
 [packages]
 dash = "*"
-dash-renderer = "*"
-dash-html-components = "*"
-dash-core-components = "*"
 geopandas = "*"
 pandas = "*"
 plotly = "*"
 dash-dangerously-set-inner-html = "*"
 visdcc = "*"
 xarray = "*"
-gunicorn = "*"
-dash-table = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6"
+python_version = "3.8"
