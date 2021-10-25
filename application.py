@@ -707,4 +707,4 @@ def make_plot(community, risktype):
 
 
 if __name__ == "__main__":
-    application.run(debug=True, port=8080)
+    application.run(debug=os.getenv("FLASK_DEBUG", default=False), port=8080)
