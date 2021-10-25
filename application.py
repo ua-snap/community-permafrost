@@ -7,7 +7,6 @@ from random import randint
 import math
 import numpy as np
 import dash
-import flask
 from dash.dependencies import Input, Output, State
 import plotly.graph_objs as go
 from dash import dcc
@@ -15,7 +14,6 @@ from dash import html
 from dash import dash_table
 import dash_dangerously_set_inner_html
 import pandas as pd
-import geopandas as gpd
 
 
 mapbox_access_token = os.environ["MAPBOX_ACCESS_TOKEN"]
