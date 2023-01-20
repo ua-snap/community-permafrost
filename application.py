@@ -307,7 +307,7 @@ help_text = html.Div(
 <h3>Learn more about the variables used in this tool</h3>
 
 <p>This data summarizes permafrost hazard risks specific for rural communitities in Alaska.
-    It aggragates information from a number of different sources including DOT borehole logs and mean annual ground temperature (MAGT) from the GI Permafrost Lab
+    It aggregates information from a number of different sources including DOT borehole logs and mean annual ground temperature (MAGT) from the GI Permafrost Lab
     to an average for the community.</p>
 
 <h4>How to interpret permafrost hazards for your community</h4>
