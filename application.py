@@ -328,7 +328,7 @@ help_text = html.Div(
             <th scope="row">Confidence level</th>
             <td>
                 <ul>
-                    <li><strong>*</strong> – low (no reports with ground-ice data, no HMPs; estimation is based on general information on surficial geology and permafrost occurrence and analysis of available imagery)
+                    <li><strong>*</strong> – low (no reports with ground-ice data, no Hazard Mitigation Plan (HMP); estimation is based on general information on surficial geology and permafrost occurrence and analysis of available imagery)
                     </li>
                     <li><strong>**</strong> – medium (some information on permafrost conditions is available, including several geotechnical reports, HMPs, etc.)
                     </li>
