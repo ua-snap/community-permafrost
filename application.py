@@ -29,6 +29,32 @@ app = dash.Dash(__name__)
 application = app.server
 app.title = "SNAP - Community Permafrost Data"
 
+app.index_string = f"""
+<!DOCTYPE html>
+<html>
+    <head>
+        <script async defer 
+            data-website-id="267edbf9-6b86-4b7c-af87-553be3218af5"
+            src="https://umami.snap.uaf.edu/umami.js"
+            data-do-not-track="true"
+        ></script>
+        {{%metas%}}
+        <title>{{%title%}}</title>
+        {{%favicon%}}
+        {{%css%}}
+    </head>
+    <body>
+        {{%app_entry%}}
+        <footer>
+            {{%config%}}
+            {{%scripts%}}
+            {{%renderer%}}
+        </footer>
+    </body>
+</html>
+"""
+
+
 # Community Dropdown
 community = html.Div(
     className="field",
