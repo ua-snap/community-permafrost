@@ -288,6 +288,11 @@ UA is an AA/EO employer and educational institution and prohibits illegal discri
             """,
             className="content is-size-6",
         ),
+        dash_dangerously_set_inner_html.DangerouslySetInnerHTML(
+            """
+            <p>UA is committed to providing accessible websites. <a href="https://www.alaska.edu/webaccessibility/">Learn more about UA&rsquo;s notice of web accessibility</a>.  If we can help you access this website&rsquo;s content, <a href="mailto:uaf-snap-data-tools@alaska.edu">email us!</a></p>
+            """
+        ),
     ],
 )
 
