@@ -285,7 +285,8 @@ footer = html.Footer(
         ),
         dcc.Markdown(
             """
-UA is an AA/EO employer and educational institution and prohibits illegal discrimination against any individual. [Statement of Nondiscrimination](https://www.alaska.edu/nondiscrimination/)
+UA is an affirmative action / equal opportunity employer, educational institution and provider, and prohibits illegal discrimination against any individual.  
+[Statement of Nondiscrimination](https://www.alaska.edu/nondiscrimination/) and [Privacy Statement](https://www.alaska.edu/records/records/compliance/gdpr/ua-privacy-statement/)
             """,
             className="content is-size-6",
         ),
