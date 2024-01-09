@@ -35,7 +35,7 @@ app.index_string = f"""
     <head>
         <script async defer 
             data-website-id="267edbf9-6b86-4b7c-af87-553be3218af5"
-            src="https://umami.snap.uaf.edu/umami.js"
+            src="https://umami.snap.uaf.edu/script.js"
             data-domains="snap.uaf.edu"
             data-do-not-track="true"
         ></script>
