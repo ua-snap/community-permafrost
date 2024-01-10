@@ -126,7 +126,7 @@ for i in risk_level:
 
 # Concat risk level with community for hover titles
 communities["Hover Title"] = communities[["Community", "Risk Level"]].apply(
-    lambda x: ": ".join(x), axis=1
+    lambda x: ": ".join(str(x)), axis=1
 )
 
 map_communities_trace = go.Scattermapbox(
