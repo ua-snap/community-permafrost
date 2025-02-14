@@ -9,9 +9,7 @@ import numpy as np
 import dash
 from dash.dependencies import Input, Output, State
 import plotly.graph_objs as go
-from dash import dcc
-from dash import html
-from dash import dash_table
+from dash import dcc, html, dash_table
 import dash_dangerously_set_inner_html
 import pandas as pd
 
@@ -538,6 +536,7 @@ color_lu = {
     },
 }
 
+
 # Callback for map object when risk_type dropdown is changed
 @app.callback(Output("map", "figure"), [Input("risk_type", "value")])
 def update_map_colors(risktype):
@@ -546,7 +545,7 @@ def update_map_colors(risktype):
     if risktype == "Risk Level":
         # Create new labels / color map based on selected risktype and community
         newcomm_labels = communities[["Community", "Risk Level"]].apply(
-            lambda x: ": ".join(x), axis=1
+            lambda x: ": ".join(x.dropna().astype(str)), axis=1
         )
         for i in risk_level:
             if i == "None":
@@ -560,7 +559,7 @@ def update_map_colors(risktype):
     else:
         # Create new labels / color map based on selected risktype and community
         newcomm_labels = communities[["Community", risktype + " Label"]].apply(
-            lambda x: ": ".join(x), axis=1
+            lambda x: ": ".join(x.dropna().astype(str)), axis=1
         )
         for i in risk_level:
             if i == 0:
