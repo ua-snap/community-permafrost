@@ -283,12 +283,10 @@ footer = html.Footer(
         ),
         dcc.Markdown(
             """
-            The <a href="www.alaska.edu">University of Alaska</a> is an
+            The [University of Alaska](https://alaska.edu/alaska) is an
             Equal Opportunity/Equal Access Employer and Educational Institution. The
             University is committed to a
-            <a href="https://www.alaska.edu/nondiscrimination/"
-                >policy of non-discrimination</a
-            >
+            [policy of non-discrimination](https://alaska.edu/nondiscrimination)
             against individuals on the basis of any legally protected status.
             """,
             className="content is-size-6",
